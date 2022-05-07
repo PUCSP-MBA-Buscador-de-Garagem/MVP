@@ -1,7 +1,8 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-	clearMocks: true,
-	preset: 'ts-jest',
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  clearMocks: true,
 	projects: ['<rootDir>/packages/**/jest.config.js'],
-	testEnviroment: 'node',
 	testMatch: ['*.spec.ts', '*.spec.tsx']
-}
+};

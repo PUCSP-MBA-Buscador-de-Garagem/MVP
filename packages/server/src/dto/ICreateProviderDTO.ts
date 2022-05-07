@@ -1,28 +1,26 @@
-interface ILocation {
-  cep: number;
+export interface ILocation {
+  cep: string;
   city: string;
   state: string;
   number: string;
   region: string;
 }
 
-interface IAvailabilityEntry {
+export interface IAvailabilityEntry {
   startAt: Date;
   endAt: Date;
 }
 
-interface ISize {
+export interface ISize {
   width: number;
   height: number;
   length: number;
 }
 
-interface ICreateProviderDTO {
+export interface ICreateProviderDTO {
   size: ISize;
   availability: IAvailabilityEntry[];
   location: ILocation;
   images: string[]
 }
-
-export default ICreateProviderDTO;
 
