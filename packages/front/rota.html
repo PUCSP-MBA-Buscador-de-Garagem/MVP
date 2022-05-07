@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/maps.js"></script>
+    <link rel="stylesheet" href="css/maps.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute;top:0; width: 100%;">
+        <div class="container-fluid">
+
+            <!-- Logo/Icon iGarage - Canto superior ESQUERDO -->
+            <a class="navbar-brand" href="#"><img src="img/icon.png" style="height: 40px; width: auto;">&nbsp iGarage</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <!-- Menu: 3 botoes canto superior ESQUERDO -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vagas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                </ul>
+
+                <!-- Menu : Canto superior DIREITO -->
+                <form class="d-flex">
+                    <!-- Botao de cadastro para PARCEIRO -->
+                    <button class="btn btn-secondary" type="button" style="margin-left: 15px;"data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Seja um Parceiro</button>
+                    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Inscreva-se!</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <!-- Campo de Nome -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustom01" class="form-label">Nome</label>
+                                      <input type="text" class="form-control" id="validationCustom01" required>
+                                      <div class="valid-feedback">
+                                        Nome OK!
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Sobrenome -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustom02" class="form-label">Sobrenome</label>
+                                      <input type="text" class="form-control" id="validationCustom02" required>
+                                      <div class="valid-feedback">
+                                        Sobrenome OK!
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Usuario a ser definido -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustomUsername" class="form-label">Usuário</label>
+                                      <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Por favor informe um usuário.
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Cidade -->
+                                    <div class="col-md-6">
+                                      <label for="validationCustom03" class="form-label">Cidade</label>
+                                      <input type="text" class="form-control" id="validationCustom03" required>
+                                      <div class="invalid-feedback">
+                                        Favor informar nome da Cidade.
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de selecao de Estados -->
+                                    <div class="col-md-3">
+                                      <label for="validationCustom04" class="form-label">Estado</label>
+                                      <select class="form-select" id="validationCustom04" required>
+                                        <option selected disabled value="">Escolha...</option>
+                                        <option>Acre</option>
+                                        <option>Alagoas</option>
+                                        <option>Amapá</option>
+                                        <option>Amazonas</option>
+                                        <option>Bahia</option>
+                                        <option>Ceara</option>
+                                        <option>Distrito Federal</option>
+                                        <option>Espírito Santo</option>
+                                        <option>Goiás</option>
+                                        <option>Maranhão</option>
+                                        <option>Mato Grosso</option>
+                                        <option>Mato Grosso do Sul</option>
+                                        <option>Minas Gerais</option>
+                                        <option>Pará</option>
+                                        <option>Paraíba	João</option>
+                                        <option>Paraná</option>
+                                        <option>Pernambuco</option>
+                                        <option>Piauí</option>
+                                        <option>Rio de Janeiro</option>
+                                        <option>Rio Grande do Norte</option>
+                                        <option>Rio Grande do Sul</option>
+                                        <option>Rondônia</option>
+                                        <option>Roraima</option>
+                                        <option>Santa Catarina</option>
+                                        <option>São Paulo</option>
+                                        <option>Sergipe</option>
+                                        <option>Tocantins</option>
+                                      </select>
+                                      <div class="invalid-feedback">
+                                        Favor informar o estado.
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de CEP -->
+                                    <div class="col-md-3">
+                                      <label for="validationCustom05" class="form-label">CEP</label>
+                                      <input type="text" class="form-control" id="validationCustom05" required>
+                                      <div class="invalid-feedback">
+                                        Favor informar o CEP.
+                                      </div>
+                                    </div>
+
+                                    <!-- Informacoes extras sobre a garagem caso tenha e queira compartilhar -->
+                                    <div class="mb-3">
+                                        <label for="validationTextarea" class="form-label">Observações da Garagem</label>
+                                        <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Conte-nos sobre sua garagem, localizacao, etc." required></textarea>
+                                      </div>
+                                    
+                                      <!-- Informa o tipo de garagem, coberta ou descoberta -->
+                                      <label for="tipoDeGaragem" class="form-label">Tipo de Garagem</label>
+                                      <div class="form-check" id="tipoDeGaragem">
+                                        <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+                                        <label class="form-check-label" for="validationFormCheck2">Coberta</label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+                                        <label class="form-check-label" for="validationFormCheck3">Descoberta</label>
+                                        <div class="invalid-feedback">More example invalid feedback text</div>
+                                      </div>
+                                    
+                                      <!-- Seleciona o tipo de documento que ira anexar/enviar -->
+                                      <label for="validationTipoDoc" class="form-label">Tipo de Documento</label>
+                                      <div class="mb-3">
+                                        <select class="form-select" id="validationTipoDoc" required aria-label="select example">
+                                          <option value="">Selecione</option>
+                                          <option value="1">CNH</option>
+                                          <option value="2">RG</option>
+                                        </select>
+                                        <div class="invalid-feedback">Example invalid select feedback</div>
+                                      </div>
+
+                                      <!-- Buscar no computador para upload do documento -->
+                                      <label for="validationDoc" class="form-label">Upload do Documento</label>
+                                      <div class="mb-3">
+                                        <input type="file" id="validationDoc" class="form-control" aria-label="file example" required>
+                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                      </div>
+                                    
+                                      <!-- Termo de aceite -->
+                                      <div class="col-12">
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                          <label class="form-check-label" for="invalidCheck">
+                                            Aceito e os termos !
+                                          </label>
+                                          <div class="invalid-feedback">
+                                            Por favor, leia e aceite os termos antes de continuar.
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </form>
+                            </div>
+
+                            <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-dark">Inscrever-se</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <!-- Botao de cadastro para Clientes buscando vagas de garagem -->
+                    <button class="btn btn-outline-success" type="button" style="margin-left: 15px;"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Inscreva-se</button>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Inscreva-se!</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3 needs-validation" novalidate>
+
+                                    <!-- Campo de Nome -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustom01" class="form-label">Nome</label>
+                                      <input type="text" class="form-control" id="validationCustom01" required>
+                                      <div class="valid-feedback">
+                                        Nome OK!
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Sobrenome -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustom02" class="form-label">Sobrenome</label>
+                                      <input type="text" class="form-control" id="validationCustom02" required>
+                                      <div class="valid-feedback">
+                                        Sobrenome OK!
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Usuario -->
+                                    <div class="col-md-4">
+                                      <label for="validationCustomUsername" class="form-label">Usuário</label>
+                                      <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Por favor informe um usuário.
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de Cidade -->
+                                    <div class="col-md-6">
+                                      <label for="validationCustom03" class="form-label">Cidade</label>
+                                      <input type="text" class="form-control" id="validationCustom03" required>
+                                      <div class="invalid-feedback">
+                                        Favor informar nome da Cidade.
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de selecao de Estados -->
+                                    <div class="col-md-3">
+                                      <label for="validationCustom04" class="form-label">Estado</label>
+                                      <select class="form-select" id="validationCustom04" required>
+                                        <option selected disabled value="">Escolha...</option>
+                                        <option>Acre</option>
+                                        <option>Alagoas</option>
+                                        <option>Amapá</option>
+                                        <option>Amazonas</option>
+                                        <option>Bahia</option>
+                                        <option>Ceara</option>
+                                        <option>Distrito Federal</option>
+                                        <option>Espírito Santo</option>
+                                        <option>Goiás</option>
+                                        <option>Maranhão</option>
+                                        <option>Mato Grosso</option>
+                                        <option>Mato Grosso do Sul</option>
+                                        <option>Minas Gerais</option>
+                                        <option>Pará</option>
+                                        <option>Paraíba	João</option>
+                                        <option>Paraná</option>
+                                        <option>Pernambuco</option>
+                                        <option>Piauí</option>
+                                        <option>Rio de Janeiro</option>
+                                        <option>Rio Grande do Norte</option>
+                                        <option>Rio Grande do Sul</option>
+                                        <option>Rondônia</option>
+                                        <option>Roraima</option>
+                                        <option>Santa Catarina</option>
+                                        <option>São Paulo</option>
+                                        <option>Sergipe</option>
+                                        <option>Tocantins</option>
+                                      </select>
+                                      <div class="invalid-feedback">
+                                        Favor informar o estado.
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo de CEP -->
+                                    <div class="col-md-3">
+                                      <label for="validationCustom05" class="form-label">CEP</label>
+                                      <input type="text" class="form-control" id="validationCustom05" required>
+                                      <div class="invalid-feedback">
+                                        Favor informar o CEP.
+                                      </div>
+                                    </div>
+
+                                    <!-- Campo dos termos de aceite -->
+                                    <div class="col-12">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        <label class="form-check-label" for="invalidCheck">
+                                          Aceito e os termos !
+                                        </label>
+                                        <div class="invalid-feedback">
+                                          Por favor, leia e aceite os termos antes de continuar.
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </form>
+                            </div>
+
+                            <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-dark">Inscrever-se</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    <!-- Botao de acesso/login -->
+                    <button class="btn btn-outline-success" type="button" style="margin-left: 15px;"data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Acesse</button>
+                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Acessar !</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <!-- Campo de Email para Login -->
+                                    <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    </div>
+                                    <!-- Campo de Senha para login -->
+                                    <div class="mb-3">
+                                      <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                      <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <!-- Check button para recordar os dados para proximo login -->
+                                    <div class="mb-3 form-check">
+                                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                      <label class="form-check-label" for="exampleCheck1">Lembre de mim :D</label>
+                                    </div>
+                                  </form>
+                            </div>
+                            
+                            <!-- Rodape da tela de Login, onde se localiza o botao CANCELAR e ACESSAR -->
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                              <button type="button" class="btn btn-dark">Acessar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div id="map-container" style="position:fixed; z-index: -100;">
+        <div id="map">
+
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel" >
+        <div class="offcanvas-header">
+          <h5 id="offcanvasLeftLabel">Vagas Disponíveis</h5>
+          <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div style="display: block; margin-left:auto; margin-right:auto;">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;margin-left:auto; margin-right:auto;">
+                <div class="card-header">Carlindo</div>
+                <div class="card-body">
+                  <h5 class="card-title">Rua Cipriano Barata, 2600</h5>
+                  <p class="card-text">Minha vaga é boa demais da conta.</p>
+                  <button type="button" class="btn btn-light" onclick="calcRoute('Rua Cipriano Barata 2300','Rua Cipriano Barata, 2600');" style="display: block; margin-left: auto; margin-right:auto;">Rota</button>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;margin-left:auto; margin-right:auto;">
+                <div class="card-header">Robertinho da ZL</div>
+                <div class="card-body">
+                  <h5 class="card-title">Av. Nazaré, 320</h5>
+                  <p class="card-text">Minha garagem tem RGB no teto.</p>
+                  <button type="button" class="btn btn-light" onclick="calcRoute('Rua Cipriano Barata 2300','Av. Nazaré, 320');" style="display: block; margin-left: auto; margin-right:auto;">Rota</button>
+                </div>
+            </div>
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;margin-left:auto; margin-right:auto;">
+                <div class="card-header">Fofão</div>
+                <div class="card-body">
+                  <h5 class="card-title">R. Lino Coutinho, 983</h5>
+                  <p class="card-text">Na minha vaga cabe uma carreta.</p>
+                  <button type="button" class="btn btn-light" onclick="calcRoute('Rua Cipriano Barata 2300','R. Lino Coutinho, 983');" style="display: block; margin-left: auto; margin-right:auto;">Rota</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" style="position:fixed;bottom:10px;left:10px">Vagas</button>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvb5zE_qD7XIgZzynrp6u2OxO-YccjY2s&callback=initMap" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
