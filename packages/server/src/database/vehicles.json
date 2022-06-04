@@ -1,0 +1,23 @@
+[
+  {
+    "id": "01",
+    "brand": "BMW",
+    "model": "X5",
+    "width": 1938,
+    "length": 4886
+  },
+  {
+    "id": "02",
+    "brand": "Chevrolet",
+    "model": "Celta",
+    "width": 1610,
+    "length": 4056
+  },
+  {
+    "id": "03",
+    "brand": "Dodge",
+    "model": "Ram",
+    "width": 2210,
+    "length": 6066
+  }
+]

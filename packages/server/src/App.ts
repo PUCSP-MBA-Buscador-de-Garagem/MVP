@@ -1,9 +1,10 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 
-import userRoutes from './routes/userRoutes';
-
 import './container';
+import userRoutes from './routes/userRoutes';
+import errorHandling from './middlewares/errorHandling';
+
 
 class App {
   public express;
@@ -22,6 +23,7 @@ class App {
 
   routes() {
     this.express.use('/user', userRoutes);
+    this.express.use(errorHandling)
   }
 }
 

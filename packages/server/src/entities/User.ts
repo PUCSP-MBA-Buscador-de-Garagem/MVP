@@ -1,28 +1,28 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  UpdateDateColumn
-} from "typeorm"
-
-@Entity()
-export class User {
-    @PrimaryGeneratedColumn('uuid')
-    id: number
-
-    @Column()
-    name: string
-
-    @Column()
-    email: string
-
-    @Column()
-    password: string
-
-    @CreateDateColumn()
-    created_at: Date
-
-    @UpdateDateColumn()
-    updated_at: Date
+interface IUserDTO {
+  id: string
+  name: string
+  email: string
+  password: string
+  vehicle_id: string | false,
+  provider_id: string | false
 }
+
+class User {
+    id: string
+    name: string
+    email: string
+    password: string
+    vehicle_id: string | false
+    provider_id: string | false
+
+    constructor({ id, name, email, password }: IUserDTO) {
+      this.id = id;
+      this.name = name;
+      this.email = email;
+      this.password = password;
+      this.vehicle_id = false;
+      this.provider_id = false;
+    }
+}
+
+export default User;
