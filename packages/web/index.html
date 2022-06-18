@@ -54,41 +54,19 @@
                 </div>
                 <div class="modal-body">
                   <form class="row g-3 needs-validation" novalidate>
-                    <!-- Campo de Nome -->
-                    <div class="col-md-4">
-                      <label for="validationCustom01" class="form-label">Nome</label>
-                      <input type="text" class="form-control" id="validationCustom01" required>
+                    <!-- Campo de Email -->
+                    <div class="col-md-6">
+                      <label for="providerUserEmail" class="form-label">Email</label>
+                      <input class="form-control" id="providerUserEmail" name="providerUserEmail" required type="email">
                       <div class="valid-feedback">
                         Nome OK!
                       </div>
                     </div>
 
-                    <!-- Campo de Sobrenome -->
-                    <div class="col-md-4">
-                      <label for="validationCustom02" class="form-label">Sobrenome</label>
-                      <input type="text" class="form-control" id="validationCustom02" required>
-                      <div class="valid-feedback">
-                        Sobrenome OK!
-                      </div>
-                    </div>
-
-                    <!-- Campo de Usuario a ser definido -->
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">Usuário</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" class="form-control" id="validationCustomUsername"
-                          aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
-                          Por favor informe um usuário.
-                        </div>
-                      </div>
-                    </div>
-
                     <!-- Campo de Cidade -->
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Cidade</label>
-                      <input type="text" class="form-control" id="validationCustom03" required>
+                      <label for="providerCity" class="form-label">Cidade</label>
+                      <input type="text" class="form-control" id="providerCity" name="providerCity" required>
                       <div class="invalid-feedback">
                         Favor informar nome da Cidade.
                       </div>
@@ -96,8 +74,8 @@
 
                     <!-- Campo de selecao de Estados -->
                     <div class="col-md-3">
-                      <label for="validationCustom04" class="form-label">Estado</label>
-                      <select class="form-select" id="validationCustom04" required>
+                      <label for="providerFU" class="form-label">Estado</label>
+                      <select class="form-select" id="providerFU" name="providerFU" required>
                         <option selected disabled value="">Escolha...</option>
                         <option>Acre</option>
                         <option>Alagoas</option>
@@ -134,10 +112,19 @@
 
                     <!-- Campo de CEP -->
                     <div class="col-md-3">
-                      <label for="validationCustom05" class="form-label">CEP</label>
-                      <input type="text" class="form-control" id="validationCustom05" required>
+                      <label for="providerZipCode" class="form-label">CEP</label>
+                      <input type="text" class="form-control" id="providerZipCode" name="providerZipCode" required>
                       <div class="invalid-feedback">
                         Favor informar o CEP.
+                      </div>
+                    </div>
+
+                    <!-- Campo de Número -->
+                    <div class="col-md-3">
+                      <label for="providerNumber" class="form-label">Número</label>
+                      <input type="text" class="form-control" id="providerNumber" name="providerNumber" required>
+                      <div class="invalid-feedback">
+                        Favor informar o Número.
                       </div>
                     </div>
 
@@ -149,7 +136,7 @@
                     </div>
 
                     <!-- Informa o tipo de garagem, coberta ou descoberta -->
-                    <label for="tipoDeGaragem" class="form-label">Tipo de Garagem</label>
+                    <!-- <label for="tipoDeGaragem" class="form-label">Tipo de Garagem</label>
                     <div class="form-check" id="tipoDeGaragem">
                       <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
                         required>
@@ -160,10 +147,10 @@
                         required>
                       <label class="form-check-label" for="validationFormCheck3">Descoberta</label>
                       <div class="invalid-feedback">More example invalid feedback text</div>
-                    </div>
+                    </div> -->
 
                     <!-- Seleciona o tipo de documento que ira anexar/enviar -->
-                    <label for="validationTipoDoc" class="form-label">Tipo de Documento</label>
+                    <!-- <label for="validationTipoDoc" class="form-label">Tipo de Documento</label>
                     <div class="mb-3">
                       <select class="form-select" id="validationTipoDoc" required aria-label="select example">
                         <option value="">Selecione</option>
@@ -171,17 +158,17 @@
                         <option value="2">RG</option>
                       </select>
                       <div class="invalid-feedback">Example invalid select feedback</div>
-                    </div>
+                    </div> -->
 
                     <!-- Buscar no computador para upload do documento -->
-                    <label for="validationDoc" class="form-label">Upload do Documento</label>
+                    <!-- <label for="validationDoc" class="form-label">Upload do Documento</label>
                     <div class="mb-3">
                       <input type="file" id="validationDoc" class="form-control" aria-label="file example" required>
                       <div class="invalid-feedback">Example invalid form file feedback</div>
-                    </div>
+                    </div> -->
 
                     <!-- Termo de aceite -->
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                         <label class="form-check-label" for="invalidCheck">
@@ -191,7 +178,7 @@
                           Por favor, leia e aceite os termos antes de continuar.
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </form>
                 </div>
 
@@ -220,8 +207,8 @@
 
                     <!-- Campo de Nome -->
                     <div class="col-md-4">
-                      <label for="validationCustom01" class="form-label">Nome</label>
-                      <input id="inputName" type="text" class="form-control" id="validationCustom01" required>
+                      <label for="registerFirstNameField" class="form-label">Nome</label>
+                      <input id="registerFirstNameField" type="text" class="form-control" id="registerFirstNameField" required>
                       <div class="valid-feedback">
                         Nome OK!
                       </div>
@@ -229,91 +216,38 @@
 
                     <!-- Campo de Sobrenome -->
                     <div class="col-md-4">
-                      <label for="validationCustom02" class="form-label">Sobrenome</label>
-                      <input type="text" class="form-control" id="validationCustom02" required>
+                      <label for="registerLastName" class="form-label">Sobrenome</label>
+                      <input class="form-control" id="registerLastName" name="registerLastName" required type="text">
                       <div class="valid-feedback">
                         Sobrenome OK!
                       </div>
                     </div>
 
-                    <!-- Campo de Usuario -->
-                    <div class="col-md-4">
-                      <label for="validationCustomUsername" class="form-label">Usuário</label>
+                    <!-- Campo de Email -->
+                    <div class="col-md-8">
+                      <label for="registerEmailField" class="form-label">Usuário</label>
                       <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input id="inputEmail" type="text" class="form-control" id="validationCustomUsername"
+                        <input id="registerEmailField" type="email" class="form-control" id="registerEmailField"
                           aria-describedby="inputGroupPrepend" required>
-                        <div class="invalid-feedback">
+                        <div class="valid-feedback" id="registerEmailFieldInvalid">
                           Por favor informe um usuário.
                         </div>
                       </div>
                     </div>
 
-                    <!-- Campo de Cidade -->
-                    <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">Cidade</label>
-                      <input type="text" class="form-control" id="validationCustom03" required>
-                      <div class="invalid-feedback">
-                        Favor informar nome da Cidade.
-                      </div>
+                    <!-- Campo de Senha -->
+                    <div class="col-md-5">
+                      <label class="form-label" for="registerPasswordField">Senha</label>
+                      <input class="form-control" id="registerPasswordField" name="registerPasswordField" type="password" required>
                     </div>
 
-                    <!-- Campo de selecao de Estados -->
-                    <div class="col-md-3">
-                      <label for="validationCustom04" class="form-label">Estado</label>
-                      <select class="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Escolha...</option>
-                        <option>Acre</option>
-                        <option>Alagoas</option>
-                        <option>Amapá</option>
-                        <option>Amazonas</option>
-                        <option>Bahia</option>
-                        <option>Ceara</option>
-                        <option>Distrito Federal</option>
-                        <option>Espírito Santo</option>
-                        <option>Goiás</option>
-                        <option>Maranhão</option>
-                        <option>Mato Grosso</option>
-                        <option>Mato Grosso do Sul</option>
-                        <option>Minas Gerais</option>
-                        <option>Pará</option>
-                        <option>Paraíba João</option>
-                        <option>Paraná</option>
-                        <option>Pernambuco</option>
-                        <option>Piauí</option>
-                        <option>Rio de Janeiro</option>
-                        <option>Rio Grande do Norte</option>
-                        <option>Rio Grande do Sul</option>
-                        <option>Rondônia</option>
-                        <option>Roraima</option>
-                        <option>Santa Catarina</option>
-                        <option>São Paulo</option>
-                        <option>Sergipe</option>
-                        <option>Tocantins</option>
-                      </select>
-                      <div class="invalid-feedback">
-                        Favor informar o estado.
-                      </div>
-                    </div>
-
-                    <!-- Campo de CEP -->
-                    <div class="col-md-3">
-                      <label for="validationCustom05" class="form-label">CEP</label>
-                      <input type="text" class="form-control" id="validationCustom05" required>
-                      <div class="invalid-feedback">
-                        Favor informar o CEP.
-                      </div>
-                    </div>
-
-                    <!-- Campo dos termos de aceite -->
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                          Aceito e os termos !
-                        </label>
+                    <!-- Campo de Confirmação de Senha -->
+                    <div class="col-md-5">
+                      <label class="form-label" for="registerConfirmPasswordField">Confirmar senha</label>
+                      <div class="input-group has-validation">
+                        <input class="form-control" id="registerConfirmPasswordField" name="registerConfirmPasswordField" type="password" required>
                         <div class="invalid-feedback">
-                          Por favor, leia e aceite os termos antes de continuar.
+                          Senhas são diferentes
                         </div>
                       </div>
                     </div>
@@ -323,7 +257,7 @@
                 <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button id="btnInscrever" type="button" class="btn btn-dark">Inscrever-se</button>
+                  <button id="btnRegister" type="button" class="btn btn-dark">Inscrever-se</button>
                 </div>
               </div>
             </div>
@@ -344,26 +278,26 @@
                   <form>
                     <!-- Campo de Email para Login -->
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <label for="sessionEmail" class="form-label">E-mail</label>
+                      <input type="email" class="form-control" id="sessionEmail" name="sessionEmail" aria-describedby="emailHelp">
                     </div>
                     <!-- Campo de Senha para login -->
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Senha</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="sessionPassword" class="form-label">Senha</label>
+                      <input type="password" class="form-control" id="sessionPassword" name="sessionPassword">
                     </div>
                     <!-- Check button para recordar os dados para proximo login -->
-                    <div class="mb-3 form-check">
+                    <!-- <div class="mb-3 form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Lembre de mim :D</label>
-                    </div>
+                    </div> -->
                   </form>
                 </div>
 
                 <!-- Rodape da tela de Login, onde se localiza o botao CANCELAR e ACESSAR -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-dark">Acessar</button>
+                  <button type="button" class="btn btn-dark" id="SessionAccessButton">Acessar</button>
                 </div>
               </div>
             </div>
@@ -563,6 +497,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
-  <script src="js/index.js"></script>
+  <script src="js/CreateUser.js" type="module"></script>
+  <script src="js/Session.js" type="module"></script>
 </body>
 </html>

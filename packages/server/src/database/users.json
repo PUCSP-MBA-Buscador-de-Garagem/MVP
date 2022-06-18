@@ -1,26 +1,50 @@
 [
     {
-      "id": "433f5a04-f7c0-48f2-af65-87b05b6ebd4f",
-      "name": "Bartholomew Kuma",
-      "email": "barth@revolution.com",
-      "password": "$2b$08$eclbc6XAFLXSCbKG54CNBO25w6t7dnHHLCLlfD0JrWMj8Xkxx3h/i",
-      "vehicle_id": false,
-      "provider_id": false
+        "id": "433f5a04-f7c0-48f2-af65-87b05b6ebd4f",
+        "name": "Bartholomew Kuma",
+        "email": "barth@revolution.com",
+        "password": "$2b$08$eclbc6XAFLXSCbKG54CNBO25w6t7dnHHLCLlfD0JrWMj8Xkxx3h/i",
+        "vehicle_id": false,
+        "provider_id": false
     },
     {
-      "id": "65bcd619-bc47-4cf2-995c-1f8536b59f93",
-      "name": "Manoel Pino",
-      "email": "mrpjecia@gmail.com",
-      "password": "$2b$08$MpeOy94hPCdcsMFTLoJHMeNBEAYQxO13d/K4Ele5n2Lp.BGapeVHC",
-      "vehicle_id": false,
-      "provider_id": false
+        "id": "65bcd619-bc47-4cf2-995c-1f8536b59f93",
+        "name": "Manoel Pino",
+        "email": "mrpjecia@gmail.com",
+        "password": "$2b$08$MpeOy94hPCdcsMFTLoJHMeNBEAYQxO13d/K4Ele5n2Lp.BGapeVHC",
+        "vehicle_id": false,
+        "provider_id": false
     },
     {
-      "id": "070eadd2-92ce-4794-8ed2-8e36f62ae61f",
-      "name": "vinics",
-      "email": "vinics.dr@gmail.com",
-      "password": "$2b$08$4R.HyPAc7D0E7ZZADIhoi.Zul.eqRgCHrW0Y5sUBnkdIQEEHMujAG",
-      "vehicle_id": false,
-      "provider_id": false
+        "id": "070eadd2-92ce-4794-8ed2-8e36f62ae61f",
+        "name": "vinics",
+        "email": "vinics.dr@gmail.com",
+        "password": "$2b$08$4R.HyPAc7D0E7ZZADIhoi.Zul.eqRgCHrW0Y5sUBnkdIQEEHMujAG",
+        "vehicle_id": false,
+        "provider_id": false
+    },
+    {
+        "id": "91f2b1de-70c0-4d5d-8960-b3163e805889",
+        "name": "Zoro",
+        "email": "zoro",
+        "password": "$2b$08$Gm6TqAqhvOv83SL6JLodquxbD6ouL8gkqwz9.kyD83b0cuTktSJpW",
+        "vehicle_id": false,
+        "provider_id": false
+    },
+    {
+        "id": "a05cacaf-5fb0-4812-b7c6-54c6ada5599e",
+        "name": "Trafalgar",
+        "email": "trafalg@law.com",
+        "password": "$2b$08$HctqYw/CRaS7y9/P7GkTFeUghCdmXMiL2qeWpFiTs8c/13PXGnxtK",
+        "vehicle_id": false,
+        "provider_id": false
+    },
+    {
+        "id": "7be3ce9a-7553-41d0-b55e-0dcb9f1b73dc",
+        "name": "Punk",
+        "email": "punk@hazard.com",
+        "password": "$2b$08$0kt3Ou.ICFB4kppkhKH1Au4JtmYw1NgsoxTgOV.3z4z7HDHKhIGVO",
+        "vehicle_id": false,
+        "provider_id": false
     }
 ]

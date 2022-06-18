@@ -9,6 +9,8 @@ const userController = new UserController();
 const providerController = new ProviderController();
 
 userRoutes.post('/register', userController.create);
-userRoutes.post('/provider',ensureAuthenticatation, providerController.create);
+
+userRoutes.use(ensureAuthenticatation);
+userRoutes.post('/provider', providerController.create);
 
 export default userRoutes;

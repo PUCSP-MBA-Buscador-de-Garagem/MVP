@@ -3,8 +3,8 @@ interface IUserDTO {
   name: string
   email: string
   password: string
-  vehicle_id: string | false,
-  provider_id: string | false
+  vehicle_id?: string | false,
+  provider_id?: string | false
 }
 
 class User {

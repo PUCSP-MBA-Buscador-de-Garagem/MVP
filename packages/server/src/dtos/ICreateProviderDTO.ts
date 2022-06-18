@@ -1,10 +1,10 @@
+import { IProviderAddress, IProviderAvailability, IProviderSize } from "../entities/Provider";
+
 interface ICreateProviderDTO {
-  width: number;
-  length: number;
-  place: {
-    zipcode: string;
-    number: number;
-  };
+  address: IProviderAddress;
+  availability: IProviderAvailability;
+  size: IProviderSize;
+  user_id: string;
 }
 
 export default ICreateProviderDTO;
