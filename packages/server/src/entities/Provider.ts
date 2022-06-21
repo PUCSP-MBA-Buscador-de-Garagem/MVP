@@ -1,26 +1,41 @@
-interface IProviderPlaceDTO {
-  zipcode: string;
-  number: number;
+interface IProviderDTO {
+  address: IProviderAddress;
+  availability: IProviderAvailability;
+  id: string;
+  size: IProviderSize;
+  user_id: string;
 }
 
-interface IProviderDTO {
-  id: string
-  width: number;
+export type IProviderAddress = {
+  city: string;
+  FU: string;
+  number: number;
+  zipcode: string;
+}
+
+export type IProviderAvailability = {
+  start: string;
+  end: string;
+}
+
+export type IProviderSize = {
+  height: number;
   length: number;
-  place: IProviderPlaceDTO;
+  width: number;
 }
 
 class Provider {
-  id: string
-  width: number;
-  length: number;
-  place: IProviderPlaceDTO;
+  address: IProviderAddress;
+  availability: IProviderAvailability;
+  id: string;
+  size: IProviderSize;
+  user_id: string;
 
-  constructor({ id, width, length, place }: IProviderDTO) {
+  constructor({ id, user_id, size, availability  }: IProviderDTO) {
+    this.availability = availability;
     this.id = id;
-    this.width = width;
-    this.length = length;
-    this.place = place;
+    this.size = size;
+    this.user_id = user_id;
   }
 
 }

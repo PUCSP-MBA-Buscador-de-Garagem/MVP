@@ -15,12 +15,10 @@ class UserRepository implements IUserRepository {
   }
 
   public async create(userData: ICreateUserDTO): Promise<User> {
-    const user = new User(
-      {
+    const user = new User({
         id: randomUUID(),
         ...userData
-      }
-    );
+      });
 
     await this.save(user);
 

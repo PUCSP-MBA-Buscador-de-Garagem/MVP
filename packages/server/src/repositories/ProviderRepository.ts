@@ -25,15 +25,10 @@ class ProviderRepository implements IProviderRepository {
     return provider;
   }
 
-  // async findByEmail(email: string): Promise<User | undefined> {
-  // const usersCollection = await this.read();
-  //   return usersCollection.find(user => user.email === email);
-  // }
-
-  // async findById(id: string): Promise<User | undefined> {
-  //   const usersCollection = await this.read();
-  //   return usersCollection.find(user => user.id === id);
-  // }
+  async findById(id: string): Promise<Provider | undefined> {
+    const providersCollection = await this.read();
+    return providersCollection.find(provider => provider.id === id);
+  }
 
   private async read(): Promise<Provider[]> {
     const data = await fs.readFile(this.filePath, 'utf-8');

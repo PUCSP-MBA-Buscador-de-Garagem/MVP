@@ -4,6 +4,7 @@ import cors from 'cors';
 import './container';
 import userRoutes from './routes/userRoutes';
 import errorHandling from './middlewares/errorHandling';
+import sessionRoutes from './routes/sessionRoutes';
 
 
 class App {
@@ -23,6 +24,7 @@ class App {
 
   routes() {
     this.express.use('/user', userRoutes);
+    this.express.use('/session', sessionRoutes);
     this.express.use(errorHandling)
   }
 }
