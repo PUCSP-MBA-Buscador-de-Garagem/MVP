@@ -1,11 +1,4 @@
-interface IUserDTO {
-  id: string
-  name: string
-  email: string
-  password: string
-  vehicle_id?: string | false,
-  provider_id?: string | false
-}
+import IUserDTO from "../dtos/IUserDTO"
 
 class User {
     id: string

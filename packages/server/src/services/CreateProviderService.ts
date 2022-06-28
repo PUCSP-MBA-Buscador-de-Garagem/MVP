@@ -1,18 +1,18 @@
 import { randomUUID } from 'node:crypto';
 
 import { inject, injectable } from 'tsyringe';
+import { TProviderAddress, TProviderAvailability, TSize } from '../@types/types';
 
 import IHashProvider from "../providers/interfaces/IHashProvider";
 import IProviderRepository from '../repositories/interfaces/IProviderRepository';
 import IUserRepository from "../repositories/interfaces/IUserRepository";
 import AppError from '../utils/errors/AppError';
 
-import { IProviderAddress, IProviderAvailability, IProviderSize } from '../entities/Provider'
 
 interface IRequest {
-  address: IProviderAddress;
-  availability: IProviderAvailability;
-  size: IProviderSize;
+  address: TProviderAddress;
+  availability: TProviderAvailability;
+  size: TSize;
   user_id: string;
 }
 

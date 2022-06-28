@@ -1,41 +1,19 @@
-interface IProviderDTO {
-  address: IProviderAddress;
-  availability: IProviderAvailability;
-  id: string;
-  size: IProviderSize;
-  user_id: string;
-}
-
-export type IProviderAddress = {
-  city: string;
-  FU: string;
-  number: number;
-  zipcode: string;
-}
-
-export type IProviderAvailability = {
-  start: string;
-  end: string;
-}
-
-export type IProviderSize = {
-  height: number;
-  length: number;
-  width: number;
-}
+import { TProviderAddress, TProviderAvailability, TSize } from "../@types/types";
+import IProviderDTO from "../dtos/IProviderDTO";
 
 class Provider {
-  address: IProviderAddress;
-  availability: IProviderAvailability;
+  address: TProviderAddress;
+  availability: TProviderAvailability;
   id: string;
-  size: IProviderSize;
+  size: TSize;
   user_id: string;
 
-  constructor({ id, user_id, size, availability  }: IProviderDTO) {
+  constructor({ id, user_id, size, availability, address  }: IProviderDTO) {
     this.availability = availability;
     this.id = id;
     this.size = size;
     this.user_id = user_id;
+    this.address = address;
   }
 
 }
