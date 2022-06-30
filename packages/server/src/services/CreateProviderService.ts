@@ -40,7 +40,7 @@ class CreateProviderService {
 
     user.provider_id = provider.id;
 
-    await this.userRepository.update(user);
+    await this.userRepository.updateUser(user);
     return provider;
   }
 }

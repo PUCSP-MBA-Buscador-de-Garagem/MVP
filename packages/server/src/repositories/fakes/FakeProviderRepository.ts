@@ -16,18 +16,18 @@ class FakeProviderRepository extends FakeRepository<Provider> implements IProvid
         ...providerData
       });
 
-    await this._insert(provider);
+    await this.insert(provider);
 
     return provider;
   }
 
 
   async findById(id: string): Promise<Provider | undefined> {
-    return await this._findBy('id', id)[0];
+    return await this.findBy('id', id)[0];
   }
 
-  public async update(provider: Provider): Promise<Provider> {
-    return await this._update(provider);
+  public async updateProvider(provider: Provider): Promise<Provider> {
+    return await this.update(provider);
   }
 }
 

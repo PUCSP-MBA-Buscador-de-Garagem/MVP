@@ -1,9 +1,9 @@
-import { IProviderAddress, IProviderAvailability, IProviderSize } from "../entities/Provider";
+import { TProviderAddress, TProviderAvailability, TSize } from "../@types/types";
 
 interface ICreateProviderDTO {
-  address: IProviderAddress;
-  availability: IProviderAvailability;
-  size: IProviderSize;
+  address: TProviderAddress;
+  availability: TProviderAvailability;
+  size: TSize;
   user_id: string;
 }
 

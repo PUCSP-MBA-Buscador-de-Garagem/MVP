@@ -1,12 +1,11 @@
-import { IProviderAddress, IProviderAvailability, IProviderSize } from "../@types/types";
+import { TProviderAddress, TProviderAvailability, TSize } from "../@types/types";
 
 interface IProviderDTO {
-  address: IProviderAddress;
-  availability: IProviderAvailability;
+  address: TProviderAddress;
+  availability: TProviderAvailability;
   id: string;
-  size: IProviderSize;
+  size: TSize;
   user_id: string;
 }
-
 
 export default IProviderDTO;
