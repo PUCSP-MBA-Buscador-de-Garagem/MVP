@@ -1,4 +1,4 @@
-export type TProviderAddress = {
+export type TAddress = {
   city: string;
   FU: string;
   number: number;
@@ -16,3 +16,4 @@ export type TSize = {
   width: number;
 }
 
+export type TAppointmentStatus = 'pending' | 'cancelled' | 'approved';

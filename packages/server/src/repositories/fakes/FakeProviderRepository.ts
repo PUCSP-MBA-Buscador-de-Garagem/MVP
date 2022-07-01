@@ -23,6 +23,7 @@ class FakeProviderRepository extends FakeRepository<Provider> implements IProvid
 
 
   async findById(id: string): Promise<Provider | undefined> {
+
     return await this.findBy('id', id)[0];
   }
 

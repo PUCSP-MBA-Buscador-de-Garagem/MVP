@@ -8,8 +8,6 @@ import Repository from './Repository';
 import IUpdateProviderDTO from '../../dtos/IUpdateProviderDTO';
 
 class ProviderRepository extends Repository<Provider> implements IProviderRepository {
-  private filePath: string;
-
   constructor() {
     super('src/database/providers.json');
   }
@@ -37,7 +35,7 @@ class ProviderRepository extends Repository<Provider> implements IProviderReposi
     const providerToBeUpdated = providersCollection.findIndex(storedProvider => storedProvider.id === id)
 
     const updatedProvider = new Provider({
-      id: id,
+      id,
       address: address ? address : providersCollection[providerToBeUpdated].address,
       availability: availability ? availability : providersCollection[providerToBeUpdated].availability,
       size: size ? size : providersCollection[providerToBeUpdated].size,

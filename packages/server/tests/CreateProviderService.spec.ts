@@ -77,7 +77,7 @@ describe('Create Provider', () => {
   it('should NOT be able to create a new provider on a non-existing user', async() => {
     const { address, size, availability } = sampleProvider;
 
-     expect(
+     await expect(
       createProvider.execute({
         user_id: 'wrong_user_id',
         size,

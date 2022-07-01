@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import CreateUserService from '../src/services/CreateUserService';
 import FakeUserRepository from '../src/repositories/fakes/FakeUserRepository';
 import HashProvider from '../src/providers/HashProvider/BCryptHashProvider';
+import AppError from '../src/utils/errors/AppError';
 
 let createUser: CreateUserService;
 let fakeUserRepository: FakeUserRepository;
@@ -28,6 +29,14 @@ describe('Create User', () => {
 
     expect(userSaved?.name).toBe(name);
     expect(userSaved?.email).toBe(email);
+  });
+
+  it('should NOT be able to save a new user with a existing email on database', async() => {
+    await createUser.execute(sampleUser);
+
+    await expect(
+      createUser.execute(sampleUser)
+    ).rejects.toBeInstanceOf(AppError);
   });
 })
 

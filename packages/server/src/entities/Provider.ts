@@ -1,8 +1,8 @@
-import { TProviderAddress, TProviderAvailability, TSize } from "../@types/types";
+import { TAddress, TProviderAvailability, TSize } from "../@types/types";
 import IProviderDTO from "../dtos/IProviderDTO";
 
 class Provider {
-  address: TProviderAddress;
+  address: TAddress;
   availability: TProviderAvailability;
   id: string;
   size: TSize;

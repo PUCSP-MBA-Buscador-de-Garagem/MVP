@@ -3,6 +3,7 @@ import User from "../../entities/User";
 
 import ICreateUserDTO from "../../dtos/ICreateUserDTO";
 import IUserRepository from "../interfaces/IUserRepository";
+import { SimpleConsoleLogger } from 'typeorm';
 
 class FakeRepository<T extends { id: string }> {
   private collection: T[];
@@ -17,7 +18,7 @@ class FakeRepository<T extends { id: string }> {
   }
 
   public findBy(prop: keyof T, value: any): (T | undefined)[] {
-    const searchResult = this.collection.map((item: T) => {
+    const searchResult = this.collection.filter((item: T) => {
       if (item[prop] == value) return item;
     });
 
@@ -26,6 +27,10 @@ class FakeRepository<T extends { id: string }> {
 
   public insert(data: T) {
     this.collection.push(data);
+  }
+
+  public read(): T[] {
+    return this.collection;
   }
 
   public update(data: T) {
