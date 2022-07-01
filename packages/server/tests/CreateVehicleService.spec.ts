@@ -32,5 +32,13 @@ describe('Create Appointment', () => {
 
     expect(savedVehicle).toMatchObject(sampleVehicle);
   });
+
+  it('should NOT be able to create duplicated vehicle on database', async() => {
+    await createVehicle.execute(sampleVehicle);
+
+    await expect(
+      createVehicle.execute(sampleVehicle)
+      ).rejects.toBeInstanceOf(AppError);
+  });
 })
 
