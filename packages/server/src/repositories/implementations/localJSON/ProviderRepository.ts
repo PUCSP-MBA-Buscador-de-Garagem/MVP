@@ -6,6 +6,9 @@ import IProviderRepository from '../../interfaces/IProviderRepository';
 import ICreateProviderDTO from '../../../dtos/ICreateProviderDTO';
 import Repository from './Repository';
 import IUpdateProviderDTO from '../../dtos/IUpdateProviderDTO';
+import IFindAvailables from '../../dtos/IFindAvailables';
+
+import { isAvailable, sizeCheck } from '../../../utils/app/dataComparrison';
 
 class ProviderRepository extends Repository<Provider> implements IProviderRepository {
   constructor() {
@@ -25,6 +28,18 @@ class ProviderRepository extends Repository<Provider> implements IProviderReposi
     return provider;
   }
 
+  async findAvailable({ vehicleSize }: IFindAvailables): Promise<Provider[]> {
+    const providersCollection = await this.read();
+
+    const result = providersCollection.filter((provider: Provider) => {
+      if (sizeCheck(provider.size, vehicleSize) && provider.availability) {
+        return provider;
+      }
+    });
+
+    return result;
+  }
+
   async findById(id: string): Promise<Provider | undefined> {
     const providersCollection = await this.read();
     return providersCollection.find(provider => provider.id === id);
@@ -38,8 +53,7 @@ class ProviderRepository extends Repository<Provider> implements IProviderReposi
       id,
       address: address ? address : providersCollection[providerToBeUpdated].address,
       availability: availability ? availability : providersCollection[providerToBeUpdated].availability,
-      size: size ? size : providersCollection[providerToBeUpdated].size,
-      user_id: providersCollection[providerToBeUpdated].user_id
+      size: size ? size : providersCollection[providerToBeUpdated].size
     })
 
     providersCollection[providerToBeUpdated] = updatedProvider;

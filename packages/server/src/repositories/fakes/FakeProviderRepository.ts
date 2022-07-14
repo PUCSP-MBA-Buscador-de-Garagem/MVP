@@ -4,6 +4,8 @@ import Provider from '../../entities/Provider';
 
 import IProviderRepository from '../interfaces/IProviderRepository';
 import FakeRepository from './FakeRepository';
+import { sizeCheck } from '../../utils/app/dataComparrison'
+import IFindAvailables from '../dtos/IFindAvailables';
 
 class FakeProviderRepository extends FakeRepository<Provider> implements IProviderRepository {
   constructor() {
@@ -19,6 +21,18 @@ class FakeProviderRepository extends FakeRepository<Provider> implements IProvid
     await this.insert(provider);
 
     return provider;
+  }
+
+  async findAvailable({ vehicleSize }: IFindAvailables): Promise<Provider[]> {
+    const providersCollection = this.read()
+
+    const result = providersCollection.filter((provider: Provider) => {
+      if (sizeCheck(provider.size, vehicleSize) && provider.availability) {
+        return provider;
+      }
+    });
+
+    return result;
   }
 
 

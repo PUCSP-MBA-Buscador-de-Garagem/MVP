@@ -1,13 +1,13 @@
 import 'reflect-metadata';
 
-import FakeUserRepository from '../src/repositories/fakes/FakeUserRepository';
-import FakeProviderRepository from '../src/repositories/fakes/FakeProviderRepository'
-import HashProvider from '../src/providers/HashProvider/BCryptHashProvider';
+import FakeUserRepository from '../../src/repositories/fakes/FakeUserRepository';
+import FakeProviderRepository from '../../src/repositories/fakes/FakeProviderRepository'
+import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
 
-import CreateUserService from '../src/services/CreateUserService';
-import AuthenticateUserService from '../src/services/AuthenticateUserService';
-import CreateProviderService from '../src/services/CreateProviderService';
-import AppError from '../src/utils/errors/AppError';
+import CreateUserService from '../../src/services/CreateUserService';
+import AuthenticateUserService from '../../src/services/AuthenticateUserService';
+import CreateProviderService from '../../src/services/CreateProviderService';
+import AppError from '../../src/utils/errors/AppError';
 
 let createUser: CreateUserService;
 let authenticate: AuthenticateUserService;
@@ -35,10 +35,7 @@ const sampleProvider = {
     length: 8.1,
     width: 5
   },
-  availability: {
-    start: '10:00',
-    end: '19:00'
-  }
+  availability: false
 }
 
 describe('Create Provider', () => {
@@ -67,10 +64,9 @@ describe('Create Provider', () => {
 
      const savedProvider = await fakeProviderRepository.findById(id);
 
-     expect(savedProvider?.user_id).toBe(user.id);
      expect(savedProvider?.address).toMatchObject(address);
      expect(savedProvider?.size).toMatchObject(size);
-     expect(savedProvider?.availability).toMatchObject(availability);
+     expect(savedProvider?.availability).toBe(false);
      expect(savedUser.provider_id).toBe(savedProvider!.id);
   });
 

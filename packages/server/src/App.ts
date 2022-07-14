@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from 'express';
+import express, { NextFunction, Request, Response, urlencoded } from 'express';
 import cors from 'cors';
 
 import './container';
@@ -20,12 +20,13 @@ class App {
   middlewares() {
     this.express.use(cors());
     this.express.use(express.json());
+    this.express.use(express.urlencoded({ extended: true }));
   }
 
   routes() {
     this.express.use('/user', userRoutes);
     this.express.use('/session', sessionRoutes);
-    this.express.use(errorHandling)
+    this.express.use(errorHandling);
   }
 }
 

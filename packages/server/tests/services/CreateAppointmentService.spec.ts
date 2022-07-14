@@ -1,15 +1,15 @@
 import 'reflect-metadata';
 
-import FakeUserRepository from "../src/repositories/fakes/FakeUserRepository";
-import FakeProviderRepository from '../src/repositories/fakes/FakeProviderRepository';
-import FakeAppointmentRepository from '../src/repositories/fakes/FakeAppointmentRepository';
+import FakeUserRepository from "../../src/repositories/fakes/FakeUserRepository";
+import FakeProviderRepository from '../../src/repositories/fakes/FakeProviderRepository';
+import FakeAppointmentRepository from '../../src/repositories/fakes/FakeAppointmentRepository';
 
-import CreateUserService from '../src/services/CreateUserService';
-import CreateProviderService from "../src/services/CreateProviderService";
-import CreateAppointmentService from '../src/services/CreateAppointmentService';
+import CreateUserService from '../../src/services/CreateUserService';
+import CreateProviderService from "../../src/services/CreateProviderService";
+import CreateAppointmentService from '../../src/services/CreateAppointmentService';
 
-import HashProvider from '../src/providers/HashProvider/BCryptHashProvider';
-import AppError from "../src/utils/errors/AppError";
+import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
+import AppError from "../../src/utils/errors/AppError";
 
 let fakeUserRepository: FakeUserRepository;
 let fakeProviderRepository: FakeProviderRepository;
@@ -45,10 +45,7 @@ const sampleProvider = {
     length: 8.1,
     width: 5
   },
-  availability: {
-    start: '10:00',
-    end: '19:00'
-  }
+  availability: false
 }
 
 const sampleAppointment = {

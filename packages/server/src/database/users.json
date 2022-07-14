@@ -38,5 +38,21 @@
         "password": "$2b$08$0kt3Ou.ICFB4kppkhKH1Au4JtmYw1NgsoxTgOV.3z4z7HDHKhIGVO",
         "vehicle_id": false,
         "provider_id": false
+    },
+    {
+        "id": "c317932d-822a-442a-8e18-74c6cb0070e5",
+        "name": "ANom",
+        "email": "anom@beltrano.com",
+        "password": "$2b$08$xv8uptkMDvAVlzYsDqY.Le.SoX4zc6Z7J6ccMVvpkf/ep7BYvHvl2",
+        "vehicle_id": false,
+        "provider_id": false
+    },
+    {
+        "id": "f7f7d1f5-9f78-4258-86ea-faa17beeac9f",
+        "name": "Adaltonio",
+        "email": "adalmail@gmail.com",
+        "password": "$2b$08$hL3EELkvExgGH1NotH8Uf.IvUjCa9kiNxD/S545.RTvR.AC2D5Ii6",
+        "vehicle_id": false,
+        "provider_id": false
     }
 ]

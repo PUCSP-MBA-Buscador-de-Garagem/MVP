@@ -3,19 +3,16 @@ import IProviderDTO from "../dtos/IProviderDTO";
 
 class Provider {
   address: TAddress;
-  availability: TProviderAvailability;
+  availability: boolean;
   id: string;
   size: TSize;
-  user_id: string;
 
-  constructor({ id, user_id, size, availability, address  }: IProviderDTO) {
+  constructor({ id, size, availability, address  }: IProviderDTO) {
+    this.address = address;
     this.availability = availability;
     this.id = id;
     this.size = size;
-    this.user_id = user_id;
-    this.address = address;
   }
-
 }
 
 export default Provider;

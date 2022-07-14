@@ -11,7 +11,7 @@ import AppError from '../utils/errors/AppError';
 
 interface IRequest {
   address: TAddress;
-  availability: TProviderAvailability;
+  availability: boolean;
   size: TSize;
   user_id: string;
 }

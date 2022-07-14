@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 
-import CreateUserService from '../src/services/CreateUserService';
-import FakeUserRepository from '../src/repositories/fakes/FakeUserRepository';
-import HashProvider from '../src/providers/HashProvider/BCryptHashProvider';
-import AppError from '../src/utils/errors/AppError';
+import CreateUserService from '../../src/services/CreateUserService';
+import FakeUserRepository from '../../src/repositories/fakes/FakeUserRepository';
+import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
+import AppError from '../../src/utils/errors/AppError';
 
 let createUser: CreateUserService;
 let fakeUserRepository: FakeUserRepository;

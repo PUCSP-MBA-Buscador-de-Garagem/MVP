@@ -1,9 +1,9 @@
-import { TProviderAddress, TProviderAvailability, TSize } from "../../@types/types";
+import { TAddress, TProviderAvailability, TSize } from "../../@types/types";
 
 interface IUpdateProviderDTO {
   id: string;
-  address?: TProviderAddress;
-  availability?: TProviderAvailability;
+  address?: TAddress;
+  availability?: boolean;
   size?: TSize;
 }
 

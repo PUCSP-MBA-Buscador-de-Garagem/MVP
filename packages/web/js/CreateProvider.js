@@ -1,21 +1,19 @@
+import api from './api.js'
+
 const btnProviderRegister = document.querySelector('#btnProviderRegister');
-const inputZipCode = document.querySelector('#validationCustom05');
+const inputZipCode = document.querySelector('#providerZipCode');
 
 btnProviderRegister.addEventListener('click', async (event) => {
-  await fetch('http://localhost:3000/user/provider', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      width: 2000,
-      length: 2000,
-      place: {
-        zipcode: inputZipCode.value,
-        number: 11245
-      }
-    })
-  })
+
+  const providerData = {
+    address: {
+      city: string,
+      FU: string,
+      number: number,
+      zipcode: string,
+    }
+  }
+
+  const response = await api.createProvider()
 })
 

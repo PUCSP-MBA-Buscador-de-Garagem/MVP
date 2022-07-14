@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 
-import FakeVehicleRepository from '../src/repositories/fakes/FakeVehicleRepository';
-import CreateVehicleService from '../src/services/CreateVehicleService';
+import FakeVehicleRepository from '../../src/repositories/fakes/FakeVehicleRepository';
+import CreateVehicleService from '../../src/services/CreateVehicleService';
 
-import AppError from "../src/utils/errors/AppError";
+import AppError from "../../src/utils/errors/AppError";
 
 let fakeVehicleRepository: FakeVehicleRepository;
 let createVehicle: CreateVehicleService;
