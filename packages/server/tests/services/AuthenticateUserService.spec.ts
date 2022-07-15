@@ -1,30 +1,30 @@
 import 'reflect-metadata';
 
-import FakeUserRepository from "../../src/repositories/fakes/FakeUserRepository";
-import CreateUserService from "../../src/services/CreateUserService";
-import AuthenticateUserService from '../../src/services/AuthenticateUserService'
-import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
-import AppError from '../../src/utils/errors/AppError';
 import { verify } from 'jsonwebtoken';
+
+import AppError from '../../src/utils/errors/AppError';
 import authConfig from '../../src/config/auth';
+import sampleUser from '../samples/sampleUser';
 
-let fakeUserRepository: FakeUserRepository;
-let createUser: CreateUserService;
+import FakeUserRepository from "../../src/repositories/fakes/FakeUserRepository";
+import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
+
+import AuthenticateUserService from '../../src/services/AuthenticateUserService'
+import CreateUserService from "../../src/services/CreateUserService";
+
+
 let authenticate:AuthenticateUserService;
+let createUser: CreateUserService;
+let fakeUserRepository: FakeUserRepository;
 let hashProvider: HashProvider;
-
-const sampleUser = {
-  name: 'testName',
-  email: 'user@test.com',
-  password: '123456',
-}
 
 describe('Create Session', () => {
   beforeEach(() => {
     fakeUserRepository = new FakeUserRepository();
     hashProvider = new HashProvider();
-    createUser = new CreateUserService(fakeUserRepository, hashProvider);
+
     authenticate = new AuthenticateUserService(fakeUserRepository, hashProvider);
+    createUser = new CreateUserService(fakeUserRepository, hashProvider);
   });
 
   it('should be able to login a user', async() => {

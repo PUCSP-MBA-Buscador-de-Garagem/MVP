@@ -1,57 +1,28 @@
 import 'reflect-metadata';
 
-import FakeUserRepository from "../../src/repositories/fakes/FakeUserRepository";
-import FakeProviderRepository from '../../src/repositories/fakes/FakeProviderRepository';
 import FakeAppointmentRepository from '../../src/repositories/fakes/FakeAppointmentRepository';
+import FakeProviderRepository from '../../src/repositories/fakes/FakeProviderRepository';
+import FakeUserRepository from "../../src/repositories/fakes/FakeUserRepository";
 
-import CreateUserService from '../../src/services/CreateUserService';
-import CreateProviderService from "../../src/services/CreateProviderService";
 import CreateAppointmentService from '../../src/services/CreateAppointmentService';
+import CreateProviderService from "../../src/services/CreateProviderService";
+import CreateUserService from '../../src/services/CreateUserService';
 
 import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
 import AppError from "../../src/utils/errors/AppError";
+import sampleAppointment from '../samples/sampleAppointment';
+import sampleProvider from '../samples/sampleProvider';
+import sampleUser from '../samples/sampleUser';
+import sampleUserProvider from '../samples/sampleUserProvider';
 
-let fakeUserRepository: FakeUserRepository;
-let fakeProviderRepository: FakeProviderRepository;
 let fakeAppointmentRepository: FakeAppointmentRepository;
-
-let createUser: CreateUserService;
-let createProvider: CreateProviderService;
-let createAppointment: CreateAppointmentService;
-
+let fakeProviderRepository: FakeProviderRepository;
+let fakeUserRepository: FakeUserRepository;
 let hashProvider: HashProvider;
 
-const sampleUser = {
-  name: 'testName',
-  email: 'user@test.com',
-  password: '123456',
-}
-
-const sampleUserProvider = {
-  name: 'Roger',
-  email: 'roger@onepiece.com',
-  password: '789456',
-}
-
-const sampleProvider = {
-  address: {
-    city: 'Barueri',
-    FU: 'São Paulo',
-    number: 144,
-    zipcode: '07860-015'
-  },
-  size: {
-    height: 4.2,
-    length: 8.1,
-    width: 5
-  },
-  availability: false
-}
-
-const sampleAppointment = {
-  start: '11:00',
-  end: '16:00'
-}
+let createAppointment: CreateAppointmentService;
+let createProvider: CreateProviderService;
+let createUser: CreateUserService;
 
 describe('Create Appointment', () => {
   beforeEach(() => {

@@ -1,19 +1,15 @@
 import 'reflect-metadata';
 
+import AppError from '../../src/utils/errors/AppError';
+import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
+import sampleUser from '../samples/sampleUser';
+
 import CreateUserService from '../../src/services/CreateUserService';
 import FakeUserRepository from '../../src/repositories/fakes/FakeUserRepository';
-import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
-import AppError from '../../src/utils/errors/AppError';
 
 let createUser: CreateUserService;
 let fakeUserRepository: FakeUserRepository;
 let hashProvider: HashProvider;
-
-const sampleUser = {
-  name: 'testName',
-  email: 'user@test.com',
-  password: '123456',
-}
 
 describe('Create User', () => {
   beforeEach(() => {

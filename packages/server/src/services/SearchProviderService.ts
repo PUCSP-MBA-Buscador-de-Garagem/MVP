@@ -8,9 +8,7 @@ import AppError from "../utils/errors/AppError";
 
 interface IRequest {
   user_id: string;
-  address: TAddress;
-  start: string;
-  end: string;
+  // address: TAddress;
 }
 
 @injectable()
@@ -26,7 +24,7 @@ class SearchProviderService {
     private vehicleRepository: IVehicleRepository,
   ) {}
 
-  public async execute({ user_id, address, start, end }: IRequest): Promise<Provider[]> {
+  public async execute({ user_id }: IRequest): Promise<Provider[] | undefined> {
     const user = await this.userRepository.findById(user_id);
     if (!user) throw new AppError('User does not exists!');
 
@@ -38,7 +36,11 @@ class SearchProviderService {
       vehicleSize: vehicle.size
     });
 
-    return providerList;
+    const result = providerList.filter((provider) => provider.id !== user_id);
+
+    if (result.length <= 0) return undefined;
+
+    return result;
   }
 }
 

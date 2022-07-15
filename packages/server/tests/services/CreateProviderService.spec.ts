@@ -4,39 +4,21 @@ import FakeUserRepository from '../../src/repositories/fakes/FakeUserRepository'
 import FakeProviderRepository from '../../src/repositories/fakes/FakeProviderRepository'
 import HashProvider from '../../src/providers/HashProvider/BCryptHashProvider';
 
-import CreateUserService from '../../src/services/CreateUserService';
 import AuthenticateUserService from '../../src/services/AuthenticateUserService';
 import CreateProviderService from '../../src/services/CreateProviderService';
-import AppError from '../../src/utils/errors/AppError';
+import CreateUserService from '../../src/services/CreateUserService';
 
-let createUser: CreateUserService;
+import AppError from '../../src/utils/errors/AppError';
+import sampleUser from '../samples/sampleUser';
+import sampleProvider from '../samples/sampleProvider';
+
+let hashProvider: HashProvider;
+let fakeProviderRepository: FakeProviderRepository;
+let fakeUserRepository: FakeUserRepository;
+
 let authenticate: AuthenticateUserService;
 let createProvider: CreateProviderService;
-
-let fakeUserRepository: FakeUserRepository;
-let fakeProviderRepository: FakeProviderRepository;
-let hashProvider: HashProvider;
-
-const sampleUser = {
-  name: 'testName',
-  email: 'user@test.com',
-  password: '123456',
-}
-
-const sampleProvider = {
-  address: {
-    city: 'Barueri',
-    FU: 'São Paulo',
-    number: 144,
-    zipcode: '07860-015'
-  },
-  size: {
-    height: 4.2,
-    length: 8.1,
-    width: 5
-  },
-  availability: false
-}
+let createUser: CreateUserService;
 
 describe('Create Provider', () => {
   beforeEach(() => {

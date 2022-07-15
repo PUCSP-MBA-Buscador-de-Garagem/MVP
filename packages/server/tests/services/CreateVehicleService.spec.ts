@@ -1,23 +1,13 @@
 import 'reflect-metadata';
 
-import FakeVehicleRepository from '../../src/repositories/fakes/FakeVehicleRepository';
 import CreateVehicleService from '../../src/services/CreateVehicleService';
+import FakeVehicleRepository from '../../src/repositories/fakes/FakeVehicleRepository';
 
 import AppError from "../../src/utils/errors/AppError";
+import sampleVehicle from '../samples/sampleVehicle';
 
-let fakeVehicleRepository: FakeVehicleRepository;
 let createVehicle: CreateVehicleService;
-
-const sampleVehicle = {
-  brand: 'mercedez',
-  model: 'class-c-180',
-  year: '2022',
-  size: {
-    width: 2000,
-    height: 3000,
-    length: 6200
-  }
-}
+let fakeVehicleRepository: FakeVehicleRepository;
 
 describe('Create Appointment', () => {
   beforeEach(() => {

@@ -3,10 +3,10 @@ import ICreateVehicleDTO from '../dtos/ICreateVehicleDTO';
 import IFindVehicleDTO from '../dtos/IFindVehicleDTO';
 
 interface IVehicleRepository {
-  create(appointmentData: ICreateVehicleDTO): Promise<Vehicle>;
+  create(vehicleData: ICreateVehicleDTO): Promise<Vehicle>;
   find(query: IFindVehicleDTO): Promise<Vehicle[] | undefined>;
   findById(id: string): Promise<Vehicle | undefined>;
-  updateVehicle(appointment: Vehicle): Promise<Vehicle>;
+  updateVehicle(vehicle: Vehicle): Promise<Vehicle>;
 }
 
 export default IVehicleRepository;
