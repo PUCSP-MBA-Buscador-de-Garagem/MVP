@@ -3,14 +3,15 @@ import { Router } from "express";
 import UserController from '../controllers/UserController';
 import ProviderController from '../controllers/ProviderController';
 import ensureAuthenticatation from '../middlewares/ensureAuthentication';
-import AppointmentsController from "../controllers/AppointmentsController";
 
 const userRoutes = Router();
-const appointmentsController = new AppointmentsController();
+const providerController = new ProviderController();
+const userController = new UserController();
 
-userRoutes.post('/register', appointmentsController.create);
+userRoutes.post('/register', userController.create);
 
 userRoutes.use(ensureAuthenticatation);
-userRoutes.post('/provider', appointmentsController.create);
+userRoutes.patch('/profile', userController.update)
+userRoutes.post('/provider', providerController.create);
 
 export default userRoutes;

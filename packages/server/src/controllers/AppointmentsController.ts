@@ -9,7 +9,7 @@ class AppointmentsController {
   public async create(request: Request, response: Response, next: NextFunction): Promise<Response> {
     try {
       const { user, provider_id, start, end } = request.body;
-      if (!user) throw new AppError('User must be logged!');
+      if (!user) throw new AppError('User must be logged!', 401);
 
       if (!provider_id || !start || !end) {
         throw new Error("Invalid data to create a new appointment!");
@@ -50,7 +50,7 @@ class AppointmentsController {
   }
 
   public async update() {
-    
+
   }
 }
 
