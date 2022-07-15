@@ -3,6 +3,9 @@ import { NextFunction, Request, Response } from "express";
 import { container } from 'tsyringe';
 
 import CreateAppointmentService from "../services/CreateAppointmentService";
+import UpdateAppointmentService from "../services/UpdateAppointmentService";
+import UpdateAppointmentStatus from "../services/UpdateAppointmentStatus";
+
 import AppError from "../utils/errors/AppError";
 
 class AppointmentsController {
@@ -49,8 +52,24 @@ class AppointmentsController {
     }
   }
 
-  public async update() {
+  public async update(request: Request, response: Response, next: NextFunction): Promise<Response | undefined> {
+    try {
+      const { user, id, start, end, provider_id, status } = request.body;
+      if (!user) throw new AppError('User must be logged in.', 401);
 
+      const updateAppointment = container.resolve(UpdateAppointmentService);
+      let AppointmentUpdated = await updateAppointment.execute({ id, user_id: user.id, provider_id, start, end });
+
+      if (status) {
+        const updateAppointmentStatus = container.resolve(UpdateAppointmentStatus);
+        AppointmentUpdated = await updateAppointmentStatus.execute({ user_id: user.id, appointment_id: id, status });
+      }
+
+      return response.status(201).json(AppointmentUpdated);
+
+    } catch (error) {
+      next(error);
+    }
   }
 }
 

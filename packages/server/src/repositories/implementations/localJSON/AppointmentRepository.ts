@@ -26,7 +26,7 @@ class AppointmentRepository extends Repository<Appointment> implements IAppointm
     return appointmentCollection.find(appointment => appointment.id === id);
   }
 
-  public async updateAppointment({ id, user_id, provider_id, start, end, status }: IAppointmentUpdateDTO): Promise<Appointment> {
+  public async updateAppointment({ id, user_id, provider_id, start, end }: IAppointmentUpdateDTO): Promise<Appointment> {
     const appointmentCollection = await this.read();
     const appointmentToBeUpdated = appointmentCollection.findIndex(storedAppointment => storedAppointment.id === id)
 
@@ -36,7 +36,7 @@ class AppointmentRepository extends Repository<Appointment> implements IAppointm
       provider_id: provider_id ? provider_id : appointmentCollection[appointmentToBeUpdated].provider_id,
       start: start ? start : appointmentCollection[appointmentToBeUpdated].start,
       end: end ? end : appointmentCollection[appointmentToBeUpdated].end,
-      status: status ? status : appointmentCollection[appointmentToBeUpdated].status
+      status: appointmentCollection[appointmentToBeUpdated].status
     })
 
     appointmentCollection[appointmentToBeUpdated] = updatedAppointment;
