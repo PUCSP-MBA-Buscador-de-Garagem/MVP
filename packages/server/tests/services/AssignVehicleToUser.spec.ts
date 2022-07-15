@@ -11,6 +11,8 @@ import FakeVehicleRepository from '../../src/repositories/fakes/FakeVehicleRepos
 import AssignVehicleToUser from '../../src/services/AssignVehicleToUser';
 import CreateUserService from '../../src/services/CreateUserService';
 import CreateVehicleService from '../../src/services/CreateVehicleService';
+import User from '../../src/entities/User';
+import Vehicle from '../../src/entities/Vehicle';
 
 let fakeUserRepository: FakeUserRepository;
 let fakeVehicleRepository: FakeVehicleRepository;
@@ -20,8 +22,11 @@ let assignVehicle: AssignVehicleToUser;
 let createUser: CreateUserService;
 let createVehicle: CreateVehicleService;
 
+let user: User;
+let vehicle: Vehicle;
+
 describe('Assign/Update vehicle to user', () => {
-  beforeEach(() => {
+  beforeEach(async() => {
     fakeUserRepository = new FakeUserRepository();
     fakeVehicleRepository = new FakeVehicleRepository();
     hashProvider = new HashProvider();
@@ -29,12 +34,12 @@ describe('Assign/Update vehicle to user', () => {
     assignVehicle = new AssignVehicleToUser(fakeUserRepository, fakeVehicleRepository);
     createUser = new CreateUserService(fakeUserRepository, hashProvider);
     createVehicle = new CreateVehicleService(fakeVehicleRepository);
+
+    user = await createUser.execute(sampleUser);
+    vehicle = await createVehicle.execute(sampleVehicle);
   });
 
   it('should be able to assign a vehicle id to User', async() => {
-    const user = await createUser.execute(sampleUser);
-    const vehicle = await createVehicle.execute(sampleVehicle);
-
     await assignVehicle.execute({ user_id: user.id, vehicle_id: vehicle.id });
 
     const savedUser = await fakeUserRepository.findById(user.id);
@@ -45,18 +50,12 @@ describe('Assign/Update vehicle to user', () => {
   });
 
   it('should NOT be able to assign a invalid user id', async() => {
-    const user = await createUser.execute(sampleUser);
-    const vehicle = await createVehicle.execute(sampleVehicle);
-
     await expect(
       assignVehicle.execute({ user_id: 'wrong_user_id', vehicle_id: vehicle.id })
     ).rejects.toBeInstanceOf(AppError);
   });
 
   it('should NOT be able to assign a invalid vehicle id', async() => {
-    const user = await createUser.execute(sampleUser);
-    const vehicle = await createVehicle.execute(sampleVehicle);
-
     await expect(
       assignVehicle.execute({ user_id: user.id, vehicle_id: 'wrong_vehicle_id' })
     ).rejects.toBeInstanceOf(AppError);

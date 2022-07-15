@@ -48,6 +48,10 @@ class AppointmentsController {
       throw new AppError(`Invalid date to create an appointment. ${error}`);
     }
   }
+
+  public async update() {
+    
+  }
 }
 
 export default AppointmentsController;
