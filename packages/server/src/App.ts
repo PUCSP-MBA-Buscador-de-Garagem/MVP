@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes';
 import errorHandling from './middlewares/errorHandling';
 import sessionRoutes from './routes/sessionRoutes';
 import vehicleRoutes from './routes/vehicleRoutes';
+import appointmentRoutes from './routes/appointmentsRoutes';
 
 
 class App {
@@ -28,6 +29,7 @@ class App {
     this.express.use('/user', userRoutes);
     this.express.use('/session', sessionRoutes);
     this.express.use('/vehicle', vehicleRoutes);
+    this.express.use('/appointment', appointmentRoutes);
     this.express.use(errorHandling);
   }
 }

@@ -14,6 +14,7 @@ import sampleAppointment from '../samples/sampleAppointment';
 import sampleProvider from '../samples/sampleProvider';
 import sampleUser from '../samples/sampleUser';
 import sampleUserProvider from '../samples/sampleUserProvider';
+import User from '../../src/entities/User';
 
 let fakeAppointmentRepository: FakeAppointmentRepository;
 let fakeProviderRepository: FakeProviderRepository;
@@ -24,8 +25,10 @@ let createAppointment: CreateAppointmentService;
 let createProvider: CreateProviderService;
 let createUser: CreateUserService;
 
+let user: User;
+
 describe('Create Appointment', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     fakeUserRepository = new FakeUserRepository();
     fakeProviderRepository = new FakeProviderRepository();
     fakeAppointmentRepository = new FakeAppointmentRepository();
@@ -35,11 +38,11 @@ describe('Create Appointment', () => {
     createUser = new CreateUserService(fakeUserRepository, hashProvider);
     createProvider = new CreateProviderService(fakeUserRepository, fakeProviderRepository);
     createAppointment = new CreateAppointmentService(fakeUserRepository, fakeProviderRepository, fakeAppointmentRepository);
+
+    user = await createUser.execute(sampleUser);
   });
 
   it('should be able to create a new appointment on database', async() => {
-    const user = await createUser.execute(sampleUser);
-
     const userProvider = await createUser.execute(sampleUserProvider);
     const provider = await createProvider.execute({
       user_id: userProvider.id,
@@ -78,8 +81,6 @@ describe('Create Appointment', () => {
   });
 
   it('should NOT be able to create a new appointment with incorrect provider ID', async() => {
-    const user = await createUser.execute(sampleUser);
-
     await expect(
       createAppointment.execute({
         user_id: user.id,
