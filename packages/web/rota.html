@@ -410,25 +410,9 @@
     <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft" style="position:fixed;bottom:10px;left:10px">Vagas</button>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
-
-      let autocomplete;
-      function initAutoComplete(){
-        autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById('inputZip'),
-          {
-            componentRestrictions:{'country':['BR']},
-          }
-        );{
-          setCenter()
-        };
-        
-      }
-
-    </script>
   
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAudSnE5OHmw0Oye7MAWponvBjC4ma-Bbk&libraries=places&callback=initAutoComplete" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAudSnE5OHmw0Oye7MAWponvBjC4ma-Bbk&callback=initMap" defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAudSnE5OHmw0Oye7MAWponvBjC4ma-Bbk&libraries=places&callback=initAutoComplete" async defer></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAudSnE5OHmw0Oye7MAWponvBjC4ma-Bbk&libraries=places&callback=initMap" defer></script>
 
   </body>
 

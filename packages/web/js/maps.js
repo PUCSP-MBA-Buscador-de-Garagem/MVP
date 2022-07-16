@@ -1,3 +1,4 @@
+let autocomplete;
 
 function initMap() {
     const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -9,6 +10,7 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     directionsRenderer.setMap(map);
+    initAutoComplete();
 }
 
 function setCenter(){
@@ -21,7 +23,16 @@ function setCenter(){
 
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsRenderer.setMap(map);
+
+  const img = 'img/pessoas2.png';
+  new google.maps.Marker({
+    position: {lat: autocomplete.getPlace().geometry.location.lat(), lng:autocomplete.getPlace().geometry.location.lng()},
+    map,
+    title: "Olha eu aqui",
+    icon: img,
+  });
 }
+
 
 function calcRoute(start,end) {
     const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -44,4 +55,13 @@ function calcRoute(start,end) {
         directionsRenderer.setDirections(result);
       }
     });
+  }
+
+function initAutoComplete(){
+    autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('inputZip'),
+      {
+        componentRestrictions:{'country':['BR']},
+      }
+    )
   }
