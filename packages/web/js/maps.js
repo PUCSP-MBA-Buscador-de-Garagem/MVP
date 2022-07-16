@@ -1,5 +1,26 @@
 let autocomplete;
 
+var userPosition = 
+    {
+    lat: '',
+    lon: ''};
+
+if(navigator.geolocation)
+  {
+      navigator.geolocation.getCurrentPosition(function(position){
+        userPosition.lat = position.coords.latitude;
+        userPosition.lon = position.coords.longitude;
+
+      });
+  }
+  else
+  {
+      alert("Geolocation not supported by your browser");
+  }
+
+
+
+
 function initMap() {
     const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
@@ -34,11 +55,14 @@ function setCenter(){
 }
 
 
-function calcRoute(start,end) {
+async function calcRoute(end) {
     const directionsRenderer = new google.maps.DirectionsRenderer();
     const directionsService = new google.maps.DirectionsService();
+    
+    console.log(userPosition.lat)
+
     const mapOptions = {
-        center: new google.maps.LatLng("-23.5489", "-46.6388"),
+        center: new google.maps.LatLng(userPosition.lat,userPosition.lon),
         zoom: 12
     }
 
@@ -46,7 +70,7 @@ function calcRoute(start,end) {
     directionsRenderer.setMap(map);
 
     var request = {
-      origin: start,
+      origin: new google.maps.LatLng(userPosition.lat,userPosition.lon),
       destination: end,
       travelMode: 'DRIVING'
     };
@@ -65,3 +89,4 @@ function initAutoComplete(){
       }
     )
   }
+
