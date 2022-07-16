@@ -11,7 +11,7 @@ interface ILoggedUser {
 }
 
 class SessionsController {
-  public async create(request: Request, response: Response): Promise<Response | AppError> {
+  public async create(request: Request, response: Response): Promise<Response | undefined> {
     const { email, password } = request.body;
 
     if (!email || !password) {
@@ -32,7 +32,10 @@ class SessionsController {
       return response.json({ user, token });
     } catch (error) {
       console.error(error);
-      return error as AppError;
+
+      const errorResponse = error as AppError;
+
+      response.json({ error: errorResponse.message });
     }
 
   }

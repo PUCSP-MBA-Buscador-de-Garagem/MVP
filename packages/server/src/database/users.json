@@ -54,5 +54,13 @@
         "password": "$2b$08$hL3EELkvExgGH1NotH8Uf.IvUjCa9kiNxD/S545.RTvR.AC2D5Ii6",
         "vehicle_id": false,
         "provider_id": false
+    },
+    {
+        "id": "1361a00f-7688-4510-a071-a6579ed73133",
+        "name": "Shanks",
+        "email": "aka@shanks.com",
+        "password": "$2b$08$LeUaagH4jYtHuj/nKXJJdOYdm0O5xD5mXM9Dx5zWRu.EsV4YBcO26",
+        "vehicle_id": false,
+        "provider_id": false
     }
 ]

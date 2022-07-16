@@ -25,10 +25,10 @@ class ProviderController {
 
   public async list(request: Request, response: Response, next: NextFunction): Promise<Response | undefined> {
     try {
-      const { user } = request.body;
+      const { user, address, range } = request.body;
 
       const searchProviders = container.resolve(SearchProviderService);
-      const providersList = searchProviders.execute({ user_id: user.id });
+      const providersList = searchProviders.execute({ user_id: user.id, address, range });
 
       return response.status(200).json(providersList);
     } catch (error) {
