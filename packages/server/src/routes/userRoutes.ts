@@ -16,5 +16,6 @@ userRoutes.use(ensureAuthenticatation);
 userRoutes.patch('/profile', userController.update)
 userRoutes.post('/provider', providerController.create);
 userRoutes.patch('/vehicle', vehiclesController.update)
+userRoutes.get('/search', providerController.list);
 
 export default userRoutes;
