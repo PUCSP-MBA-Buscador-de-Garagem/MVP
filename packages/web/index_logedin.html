@@ -128,59 +128,26 @@
                       </div>
                     </div>
 
+                    <!-- Informa o tamanho da garagem, altura e largura -->
+                    <label for="tamanhoGaragem" class="form-label">Tamanho da Garagem</label>
+                    <div class="col-md-3">
+                      <select class="form-select" id="tamanhoGaragem" name="tamanhoGaragem" required>
+                        <option selected disabled value="">Escolha...</option>
+                        <option>Altura 1610 x 4056 Largura</option>
+                        <option>Altura 1938 x 4886 Largura</option>
+                        <option>Altura 2210 x 6066 Largura</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Favor informar o tamanho (Altura x Largura).
+                      </div>
+                    </div>
+
                     <!-- Informacoes extras sobre a garagem caso tenha e queira compartilhar -->
                     <div class="mb-3">
                       <label for="validationTextarea" class="form-label">Observações da Garagem</label>
                       <textarea class="form-control is-invalid" id="validationTextarea"
                         placeholder="Conte-nos sobre sua garagem, localizacao, etc." required></textarea>
                     </div>
-
-                    <!-- Informa o tipo de garagem, coberta ou descoberta -->
-                    <!-- <label for="tipoDeGaragem" class="form-label">Tipo de Garagem</label>
-                    <div class="form-check" id="tipoDeGaragem">
-                      <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck2">Coberta</label>
-                    </div>
-                    <div class="form-check mb-3">
-                      <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck3">Descoberta</label>
-                      <div class="invalid-feedback">More example invalid feedback text</div>
-                    </div> -->
-
-                    <!-- Seleciona o tipo de documento que ira anexar/enviar -->
-                    <!-- <label for="validationTipoDoc" class="form-label">Tipo de Documento</label>
-                    <div class="mb-3">
-                      <select class="form-select" id="validationTipoDoc" required aria-label="select example">
-                        <option value="">Selecione</option>
-                        <option value="1">CNH</option>
-                        <option value="2">RG</option>
-                      </select>
-                      <div class="invalid-feedback">Example invalid select feedback</div>
-                    </div> -->
-
-                    <!-- Buscar no computador para upload do documento -->
-                    <!-- <label for="validationDoc" class="form-label">Upload do Documento</label>
-                    <div class="mb-3">
-                      <input type="file" id="validationDoc" class="form-control" aria-label="file example" required>
-                      <div class="invalid-feedback">Example invalid form file feedback</div>
-                    </div> -->
-
-                    <!-- Termo de aceite -->
-                    <!-- <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck">
-                          Aceito e os termos !
-                        </label>
-                        <div class="invalid-feedback">
-                          Por favor, leia e aceite os termos antes de continuar.
-                        </div>
-                      </div>
-                    </div> -->
-                  </form>
-                </div>
 
                 <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
                 <div class="modal-footer">
@@ -189,119 +156,56 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
 
-          <!-- Botao de cadastro para Clientes buscando vagas de garagem -->
+          <!-- Botao de cadastro de veiculo do usuario logado -->
           <button class="btn btn-outline-success" type="button" style="margin-left: 15px;" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop">Inscreva-se</button>
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            data-bs-target="#staticBackdrop4">Cadastrar Veiculo</button>
+          <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Inscreva-se!</h5>
+                  <h5 class="modal-title" id="staticBackdropLabel">Cadastre seu Veiculo!</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <form class="row g-3 needs-validation" novalidate>
-
-                    <!-- Campo de Nome -->
-                    <div class="col-md-4">
-                      <label for="registerFirstNameField" class="form-label">Nome</label>
-                      <input id="registerFirstNameField" type="text" class="form-control" id="registerFirstNameField" required>
+                    <!-- Campo Marca Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carBrand" class="form-label">Marca do Veiculo</label>
+                      <input class="form-control" id="carBrand" name="carBrand" required type="text">
                       <div class="valid-feedback">
-                        Nome OK!
+                        Marca OK!
                       </div>
                     </div>
-
-                    <!-- Campo de Sobrenome -->
-                    <div class="col-md-4">
-                      <label for="registerLastName" class="form-label">Sobrenome</label>
-                      <input class="form-control" id="registerLastName" name="registerLastName" required type="text">
+                    <!-- Campo Modelo Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carModel" class="form-label">Modelo do Veiculo</label>
+                      <input class="form-control" id="carModel" name="carModel" required type="text">
                       <div class="valid-feedback">
-                        Sobrenome OK!
+                        Modelo OK!
                       </div>
                     </div>
-
-                    <!-- Campo de Email -->
-                    <div class="col-md-8">
-                      <label for="registerEmailField" class="form-label">Usuário</label>
-                      <div class="input-group has-validation">
-                        <input id="registerEmailField" type="email" class="form-control" id="registerEmailField"
-                          aria-describedby="inputGroupPrepend" required>
-                        <div class="valid-feedback" id="registerEmailFieldInvalid">
-                          Por favor informe um usuário.
-                        </div>
+                    <!-- Campo Ano Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carYear" class="form-label">Ano do Veiculo</label>
+                      <input class="form-control" id="carYear" name="carYear" required type="number">
+                      <div class="valid-feedback">
+                        Ano OK!
                       </div>
                     </div>
-
-                    <!-- Campo de Senha -->
-                    <div class="col-md-5">
-                      <label class="form-label" for="registerPasswordField">Senha</label>
-                      <input class="form-control" id="registerPasswordField" name="registerPasswordField" type="password" required>
-                    </div>
-
-                    <!-- Campo de Confirmação de Senha -->
-                    <div class="col-md-5">
-                      <label class="form-label" for="registerConfirmPasswordField">Confirmar senha</label>
-                      <div class="input-group has-validation">
-                        <input class="form-control" id="registerConfirmPasswordField" name="registerConfirmPasswordField" type="password" required>
-                        <div class="invalid-feedback">
-                          Senhas são diferentes
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
 
                 <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button id="btnRegister" type="button" class="btn btn-dark">Inscrever-se</button>
+                  <button id="btnCarRegister" type="button" class="btn btn-dark">Cadastrar</button>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Botao de acesso/login -->
-          <button class="btn btn-outline-success" type="button" style="margin-left: 15px;" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop2">Acesse</button>
-          <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Acessar !</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <!-- Campo de Email para Login -->
-                    <div class="mb-3">
-                      <label for="sessionEmail" class="form-label">E-mail</label>
-                      <input type="email" class="form-control" id="sessionEmail" name="sessionEmail" aria-describedby="emailHelp">
-                    </div>
-                    <!-- Campo de Senha para login -->
-                    <div class="mb-3">
-                      <label for="sessionPassword" class="form-label">Senha</label>
-                      <input type="password" class="form-control" id="sessionPassword" name="sessionPassword">
-                    </div>
-                    <!-- Check button para recordar os dados para proximo login -->
-                    <!-- <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Lembre de mim :D</label>
-                    </div> -->
-                  </form>
-                </div>
-
-                <!-- Rodape da tela de Login, onde se localiza o botao CANCELAR e ACESSAR -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-dark" id="SessionAccessButton">Acessar</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </form>
       </div>
     </div>
@@ -314,20 +218,17 @@
       <div class="card text-white bg-dark mb-3"
         style="max-width: 100rem; max-height: 900px; margin-left: 10%; margin-right: 10%; top:10%">
         <div class="card-header">
-          <div style="margin-top: 15px; margin-bottom: 15px;">
-            <h4 style="display: flex;justify-content: center;">ENCONTRE SUA VAGA</h4>
-          </div>
         </div>
 
         <div class="card-body" style="background-color: white">
           <!-- Tipo de Vaga -->
           <div class="card-body">
-            <p style="color: black;">Tipo de Vaga:</p>
-              <div style="display: flex; justify-content: center; width: 100%;">
+            <p style="color: black;">Tipo de Vaga</p>
+              <div style="display: inline; margin-left: auto; margin-right: auto; width: 80%;">
                 <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                <label class="btn btn-dark" for="option6" style="margin-right: 10px;margin-left:10px;width: 40%;">Coberta</label>
+                <label class="btn btn-dark" for="option6" style="width: 30%;">Coberta</label>
                 <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                <label class="btn btn-dark" for="option7" style="margin-right: 10px;margin-left:10px;width: 40%;">Aberta</label>
+                <label class="btn btn-dark" for="option7" style="width: 30%;">Aberta</label>
               </div>
           </div>
 
@@ -489,7 +390,6 @@
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>
   <script src="js/CreateUser.js" type="module"></script>
-  <script src="js/CreateProvider.js" type="module"></script>
   <script src="js/Session.js" type="module"></script>
 </body>
 </html>
