@@ -14,6 +14,10 @@ class SessionsController {
   public async create(request: Request, response: Response): Promise<Response | AppError> {
     const { email, password } = request.body;
 
+    if (!email || !password) {
+      throw new AppError('Login invalid!');
+    }
+
     const authenticateUser = container.resolve(AuthenticateUserService);
 
     try {

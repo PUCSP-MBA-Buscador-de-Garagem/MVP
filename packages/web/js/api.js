@@ -23,11 +23,12 @@ const api = {
     return responseData.json();
   },
 
-  createProvider: async() => {
+  createProvider: async(providerData) => {
     await fetch('http://localhost:3000/user/provider', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
+      'Authorization': `Bearer ${JSON.parse(localStorage.getItem('token'))}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({

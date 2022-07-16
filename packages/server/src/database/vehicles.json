@@ -1,22 +1,28 @@
 [
   {
-    "id": "01",
+    "id": "bmw_x5_2022",
     "brand": "BMW",
     "model": "X5",
+    "year": "2022",
+    "height": 2000,
     "width": 1938,
     "length": 4886
   },
   {
-    "id": "02",
+    "id": "gm_celta_2022",
     "brand": "Chevrolet",
     "model": "Celta",
+    "year": "2022",
+    "height": 2000,
     "width": 1610,
     "length": 4056
   },
   {
-    "id": "03",
+    "id": "dodge_ram_2022",
     "brand": "Dodge",
     "model": "Ram",
+    "year": "2022",
+    "height": 2000,
     "width": 2210,
     "length": 6066
   }

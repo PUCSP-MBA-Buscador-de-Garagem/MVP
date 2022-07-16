@@ -2,6 +2,7 @@ import { inject, injectable } from 'tsyringe';
 
 import IHashProvider from "../providers/interfaces/IHashProvider";
 import IUserRepository from "../repositories/interfaces/IUserRepository";
+import AppError from '../utils/errors/AppError';
 
 interface IRequest {
   name: string;
@@ -21,7 +22,7 @@ class CreateUserService {
 
   public async execute({ name, email, password }: IRequest) {
     const checkIfUserExists = await this.userRepository.findByEmail(email);
-    if (checkIfUserExists) throw new Error('Email address already registered in database');
+    if (checkIfUserExists) throw new AppError('Email address already registered in database');
 
     const hashedPassword = await this.hashProvider.generateHash(password);
 
