@@ -1,12 +1,11 @@
-import { TAppointmentStatus } from "../../@types/types";
+import { TAddress, TAppointmentStatus } from "../../@types/types";
 
 interface IAppointmentUpdateDTO {
   id: string;
-  user_id?: string;
+  user_id: string;
   provider_id?: string;
   start?: string;
   end?: string;
-  status?: TAppointmentStatus;
 }
 
 export default IAppointmentUpdateDTO;

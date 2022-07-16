@@ -13,18 +13,5 @@ export const sizeCheck = (garageSize: TSize, vehicleSize: TSize): Boolean => {
   return true;
 };
 
-export const isAvailable = (
-  providerAvaibility: TProviderAvailability,
-  rentAppointment: TProviderAvailability
-  ): Boolean => {
-    if (!isAfter(new Date(rentAppointment.start), new Date(providerAvaibility.start))) {
-      return false;
-    }
 
-    if (!isBefore(new Date(rentAppointment.end), new Date(providerAvaibility.end))) {
-      return false;
-    }
-
-    return true;
-  };
 
