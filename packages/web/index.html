@@ -324,54 +324,66 @@
           <div class="card-body">
             <p style="color: black;">Tipo de Vaga:</p>
               <div style="display: flex; justify-content: center; width: 100%;">
-                <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off">
-                <label class="btn btn-dark" for="option6" style="margin-right: 10px;margin-left:10px;width: 40%;">Coberta</label>
-                <input type="radio" class="btn-check" name="options" id="option7" autocomplete="off">
-                <label class="btn btn-dark" for="option7" style="margin-right: 10px;margin-left:10px;width: 40%;">Aberta</label>
+                <input type="radio" class="btn-check" name="tipo_vaga" id="tipo1" autocomplete="off">
+                <label class="btn btn-dark" for="tipo1" style="margin-right: 10px;margin-left:10px;width: 40%;">Coberta</label>
+                <input type="radio" class="btn-check" name="tipo_vaga" id="tipo2" autocomplete="off">
+                <label class="btn btn-dark" for="tipo2" style="margin-right: 10px;margin-left:10px;width: 40%;">Aberta</label>
               </div>
           </div>
 
           <!-- Campos de ENDERECO, CHECKIN e CHECKOUT -->
-          <div class="card-body" style="display: inline-flex; margin-left: auto; margin-right: auto;width: 80%;">
-            <div class="mb-3" style="margin-right: 10px;">
-              <label for="inputZip" class="form-label" style="color: black;">Endereço</label>
+          <div class="card-body" style="display: inline-flex; margin-left: auto; margin-right: auto;width: 100%;">
+            <div class="mb-3" style="width: 100%;">
+              <label for="inputZip" class="form-label" style="color: black;">Endereço:</label>
               <input type="text" class="form-control" id="inputZip">
             </div>
           </div>
-          <div class="card-body" style="display: inline-flex; margin-left: auto; margin-right: auto;width: 80%;">
-            <div class="mb-3" style="margin-right: 10px;">
-              <label for="inputCheckin" class="form-label" style="color: black;">Checkin</label>
+          <div class="card-body" style="display: inline-flex;justify-content: flex-start;width: 100%;">
+            <div class="mb-3" style="width: 47.5%; margin-right: 5%;">
+              <label for="inputCheckin" class="form-label" style="color: black;">Checkin:</label>
               <input type="text" class="form-control" id="inputCheckin">
             </div>
-            <div class="mb-3" style="margin-right: 10px;">
-              <label for="inputCheckout" class="form-label" style="color: black;">Checkout</label>
+            <div class="mb-3" style="width: 47.5%;">
+              <label for="inputCheckout" class="form-label" style="color: black;">Checkout:</label>
               <input type="text" class="form-control" id="inputCheckout">
             </div>
           </div>
 
           <!-- Horario/Periodo que quer buscar/agendar vagas -->
-          <div class="card-body"">
-            <p style=" color: black;">Horário</p>
-            <div style="display: inline;">
-              <input type="radio" class="btn-check" name="options" id="opt_manha" autocomplete="off">
-              <label class="btn btn-dark" for="opt_manha">
-                <p>Manhã</p>
-                <p>6h - 12h</p>
-              </label>
+          <div class="card-body">
+            <p style=" color: black;">Horário:</p>
+            <div style="display: inline-flex;justify-content: space-between;width: 100%;padding-left: 10%;padding-right: 10%;margin-bottom: 5%;">
+              <div style="width: 24%;">
+                <input type="radio" class="btn-check" name="options" id="opt_manha" autocomplete="off">
+                <label class="btn btn-dark" for="opt_manha" style="width: 100%;display: flex;justify-content: center;align-content: center;">
+                  <div style="margin-top: 10%;">
+                    <p>Manhã</p>
+                    <p>6h - 12h</p>
+                  </div>
+
+                </label>
+              </div>
               <input type="radio" class="btn-check" name="options" id="opt_tarde" autocomplete="off">
-              <label class="btn btn-dark" for="opt_tarde">
+              <label class="btn btn-dark" for="opt_tarde" style="width: 24%;">
+                <div style="margin-top: 10%;">
                 <p>Tarde</p>
                 <p>12h - 18h</p>
+                </div>
               </label>
               <input type="radio" class="btn-check" name="options" id="opt_noite" autocomplete="off">
-              <label class="btn btn-dark" for="opt_noite">
-                <p>Noite</p>
-                <p>18h - 22h</p>
+              <label class="btn btn-dark" for="opt_noite" style="width: 24%;">
+                <div style="margin-top: 10%;">
+                  <p>Noite</p>
+                  <p>18h - 22h</p>
+                </div>
               </label>
               <input type="radio" class="btn-check" name="options" id="opt_pernoite" autocomplete="off">
-              <label class="btn btn-dark" for="opt_pernoite">
-                <p>Pernoite</p>
-                <p>22h - 06h</p>
+              <label class="btn btn-dark" for="opt_pernoite" style="width: 24%;">
+                <div style="margin-top: 10%;">
+                  <p>Pernoite</p>
+                  <p>22h - 06h</p>
+                </div>
+
               </label>
             </div>
 
