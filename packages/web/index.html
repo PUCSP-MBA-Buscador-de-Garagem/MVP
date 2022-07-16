@@ -357,8 +357,11 @@
     let autocomplete;
     function initAutoComplete(){
       autocomplete = new google.maps.places.Autocomplete(
-        document.getElementById('inputZip')
-      )
+        document.getElementById('inputZip'),
+        {
+          componentRestrictions:{'country':['BR']}
+        }
+      );
     }
   </script>
 
