@@ -8,6 +8,11 @@ class FakeAppointmentRepository extends FakeRepository<Appointment> implements I
   constructor() {
     super();
   }
+  deleteAppointment(id: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      resolve(this.delete(id));
+    });
+  }
 
   public async create(appointmentData: ICreateAppointmentDTO): Promise<Appointment> {
     const user = new Appointment({

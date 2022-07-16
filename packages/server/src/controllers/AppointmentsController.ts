@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from "express";
 import { container } from 'tsyringe';
 
 import CreateAppointmentService from "../services/CreateAppointmentService";
+import DeleteAppointmentService from "../services/DeleteAppointmentService";
 import UpdateAppointmentService from "../services/UpdateAppointmentService";
 import UpdateAppointmentStatus from "../services/UpdateAppointmentStatus";
 
@@ -49,6 +50,22 @@ class AppointmentsController {
 
     } catch (error) {
       throw new AppError(`Invalid date to create an appointment. ${error}`);
+    }
+  }
+
+  public async remove(request: Request, response: Response, next: NextFunction): Promise<void> {
+    try {
+      const { id } = request.params;
+      if (!id) throw new AppError(`An id is required to remove an appointment`);
+
+      const { user } = request.body;
+      if (!user) throw new AppError(`User must be logged in`);
+
+      const deleteAppointment = container.resolve(DeleteAppointmentService);
+      await deleteAppointment.execute({ id, user_id: user.id });
+
+    } catch (error) {
+      throw new AppError(`Invalid date to remove an appointment. ${error}`);
     }
   }
 

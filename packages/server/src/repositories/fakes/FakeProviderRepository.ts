@@ -23,6 +23,10 @@ class FakeProviderRepository extends FakeRepository<Provider> implements IProvid
     return provider;
   }
 
+  public async delete(id: string): Promise<void> {
+    return this.delete(id);
+  }
+
   async findAvailable({ vehicleSize }: IFindAvailables): Promise<Provider[]> {
     const providersCollection = this.read()
 
