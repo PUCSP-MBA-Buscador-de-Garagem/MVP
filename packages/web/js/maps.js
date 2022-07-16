@@ -11,6 +11,17 @@ function initMap() {
     directionsRenderer.setMap(map);
 }
 
+function setCenter(){
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  const directionsService = new google.maps.DirectionsService();
+  const mapOptions = {
+    center: new google.maps.LatLng(autocomplete.getPlace().geometry.location.lat(),autocomplete.getPlace().geometry.location.lng()),
+    zoom: 15
+  }
+
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
+}
 
 function calcRoute(start,end) {
     const directionsRenderer = new google.maps.DirectionsRenderer();
