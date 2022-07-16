@@ -18,11 +18,6 @@ class GoogleDistanceMatrixAPI implements IDistanceAPI {
   }
 
   async getDistance(from: string, to: string): Promise<void> {
-    const requestConfig = {
-      method: 'get',
-      url: ``
-    }
-
     const data = await this.axios.get(encodeURI(`json?origins=${from}&destinations=${to}&units=metric&key=${google.distanceMatrix.apiKey}`))
 
     console.log(data.data.rows[0]);
