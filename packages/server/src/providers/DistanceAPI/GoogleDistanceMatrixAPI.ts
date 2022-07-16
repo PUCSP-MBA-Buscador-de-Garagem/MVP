@@ -2,11 +2,7 @@ import axios, { AxiosInstance } from 'axios';
 
 import IDistanceAPI from '../interfaces/IDistanceAPI';
 import { google } from '../../config/apiCredentials';
-
-interface IRequestConfig {
-  method: string;
-  url: string;
-}
+import { TAddress } from '../../@types/types';
 
 class GoogleDistanceMatrixAPI implements IDistanceAPI {
   private axios: AxiosInstance;
@@ -17,17 +13,14 @@ class GoogleDistanceMatrixAPI implements IDistanceAPI {
     })
   }
 
-  async getDistance(from: string, to: string): Promise<void> {
-    const requestConfig = {
-      method: 'get',
-      url: ``
-    }
+  public async getDistance(from: TAddress, to: TAddress): Promise<any> {
+    const fromString = `${from.zipcode}, ${from.city}, ${from.FU}, Brazil`
+    const toString = `${to.zipcode}, ${to.city}, ${to.FU}, Brazil`
 
-    const data = await this.axios.get(encodeURI(`json?origins=${from}&destinations=${to}&units=metric&key=${google.distanceMatrix.apiKey}`))
+    const data = await this.axios.get(encodeURI(`json?origins=${fromString}&destinations=${toString}&units=metric&key=${google.distanceMatrix.apiKey}`))
 
-    console.log(data.data.rows[0]);
+    return(data.data.rows[0].elements[0].distance.value);
   }
-
 }
 
 export default GoogleDistanceMatrixAPI;
