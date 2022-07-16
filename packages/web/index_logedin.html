@@ -156,7 +156,56 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
+
+          <!-- Botao de cadastro de veiculo do usuario logado -->
+          <button class="btn btn-outline-success" type="button" style="margin-left: 15px;" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop4">Cadastrar Veiculo</button>
+          <div class="modal fade" id="staticBackdrop4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Cadastre seu Veiculo!</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <!-- Campo Marca Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carBrand" class="form-label">Marca do Veiculo</label>
+                      <input class="form-control" id="carBrand" name="carBrand" required type="text">
+                      <div class="valid-feedback">
+                        Marca OK!
+                      </div>
+                    </div>
+                    <!-- Campo Modelo Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carModel" class="form-label">Modelo do Veiculo</label>
+                      <input class="form-control" id="carModel" name="carModel" required type="text">
+                      <div class="valid-feedback">
+                        Modelo OK!
+                      </div>
+                    </div>
+                    <!-- Campo Ano Veiculo -->
+                    <div class="col-md-6">
+                      <label for="carYear" class="form-label">Ano do Veiculo</label>
+                      <input class="form-control" id="carYear" name="carYear" required type="number">
+                      <div class="valid-feedback">
+                        Ano OK!
+                      </div>
+                    </div>
+
+                <!-- Rodape do formulario de cadastro, onde se localiza o botao de cancelar e concluir o cadastro -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button id="btnCarRegister" type="button" class="btn btn-dark">Cadastrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </form>
       </div>
     </div>
