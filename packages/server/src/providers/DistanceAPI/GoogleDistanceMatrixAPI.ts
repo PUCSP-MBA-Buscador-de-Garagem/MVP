@@ -25,7 +25,7 @@ class GoogleDistanceMatrixAPI implements IDistanceAPI {
 
     const data = await this.axios.get(encodeURI(`json?origins=${from}&destinations=${to}&units=metric&key=${google.distanceMatrix.apiKey}`))
 
-    console.log(data);
+    console.log(data.data.rows[0]);
   }
 
 }

@@ -5,8 +5,7 @@ describe('GoogleAPITest', () => {
     const api = new GoogleDistanceMatrixAPI();
 
     try {
-      const data = await api.getDistance('Boston', 'Nevada');
-      console.log(data);
+      const data = await api.getDistance('Osasco, São Paulo, Brasil', 'Barueri, São Paulo, Brasil');
 
     } catch (error) {
       console.log(error);
