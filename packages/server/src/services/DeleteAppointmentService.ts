@@ -19,7 +19,7 @@ class DeleteAppointmentService {
     if (!appointment) throw new AppError('Appointment does not exists.');
     if (appointment.user_id !== user_id) throw new AppError('User must be logged in!');
 
-    await this.appointmentRepository.delete(id);
+    await this.appointmentRepository.deleteAppointment(id);
   }
 }
 

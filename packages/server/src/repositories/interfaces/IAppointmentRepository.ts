@@ -4,7 +4,7 @@ import ICreateAppointmentDTO from "../dtos/ICreateAppointmentDTO";
 
 interface IAppointmentRepository {
   create(appointmentData: ICreateAppointmentDTO): Promise<Appointment>;
-  delete(id: string): Promise<void>;
+  deleteAppointment(id: string): Promise<void>;
   findById(id: string): Promise<Appointment | undefined>;
   updateAppointment(appointment: IAppointmentUpdateDTO): Promise<Appointment>;
 }
