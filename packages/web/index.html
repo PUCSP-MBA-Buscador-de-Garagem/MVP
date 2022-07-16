@@ -417,10 +417,7 @@
                   stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" />
                 <path d="    M29.5,27.5v2c0,0.553-0.447,1-1,1h-1c-0.553,0-1-0.447-1-1v-2" fill="none" id="XMLID_6229_"
                   stroke="#263238" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" />
-                <line fill="none" id="XMLID_5901_" stroke="#263238" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-miterlimit="10" x1="30.5" x2="11.5" y1="27.5" y2="27.5" />
-                <path d="    M11.496,20.926c1.715-0.323,4.285-0.426,8.004-0.426c8.5,0,11,0.583,11,3v1.188" fill="none"
-                  id="XMLID_5891_" stroke="#263238" stroke-linecap="round" stroke-linejoin="round"
+                <line fill="none" id="XMLID_5901_" stroke="#263238" stroke-linecap="round" stroke-linejoin="round"inputZip
                   stroke-miterlimit="10" />
                 <path d="    M26.5,25.5v-1c0-0.55,0.45-1,1-1h3v2H26.5z" fill="none" id="XMLID_351_" stroke="#263238"
                   stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" />
@@ -503,5 +500,17 @@
   <script src="js/CreateUser.js" type="module"></script>
   <script src="js/CreateProvider.js" type="module"></script>
   <script src="js/Session.js" type="module"></script>
+
+
+  <script>
+    let autocomplete;
+    function initAutoComplete(){
+      autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('inputZip')
+      )
+    }
+  </script>
+
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAudSnE5OHmw0Oye7MAWponvBjC4ma-Bbk&libraries=places&callback=initAutoComplete"></script>
 </body>
 </html>
