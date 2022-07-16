@@ -21,7 +21,7 @@ class AppointmentRepository extends Repository<Appointment> implements IAppointm
   return appointment;
   }
 
-  public async delete(id: string): Promise<void> {
+  public async deleteAppointment(id: string): Promise<void> {
     const appointmentCollection = await this.read();
     const deleteIndex = appointmentCollection.findIndex(appointment => appointment.id === id);
     appointmentCollection.splice(deleteIndex, 1);

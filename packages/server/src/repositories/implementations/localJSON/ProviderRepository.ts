@@ -8,7 +8,7 @@ import Repository from './Repository';
 import IUpdateProviderDTO from '../../dtos/IUpdateProviderDTO';
 import IFindAvailables from '../../dtos/IFindAvailables';
 
-import { isAvailable, sizeCheck } from '../../../utils/app/dataComparrison';
+import { sizeCheck } from '../../../utils/app/dataComparrison';
 
 class ProviderRepository extends Repository<Provider> implements IProviderRepository {
   constructor() {
